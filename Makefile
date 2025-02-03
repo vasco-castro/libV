@@ -1,22 +1,28 @@
-NAME = libft.a
+NAME = libV.a
 
-COMPILER = cc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-FUNCTIONS = ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint ft_islower ft_isupper ft_strlen
+CHR_FTS = ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint ft_islower ft_isupper \
+
+STR_FTS = ft_strlen \
+
+NUM_FTS = \
+
+PRINT_FTS = ft_println \
 
 SRCS = $(addsuffix .c, $(FUNCTIONS))
 
 OBJS := $(SRCS:%.c=%.o)
 
 # %.o: %.c
-# 	$(COMPILER) $(CFLAGS) -c $< -o $@
+# 	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Building $(NAME)."
 	@ar rcs $(NAME) $(OBJS)
-
-all: $(NAME)
 
 clean:
 	@echo "Cleaning all objects."
@@ -30,7 +36,7 @@ re: fclean all
 
 t: $(NAME)
 	@echo Running main test file.
-	@$(COMPILER) $(CFLAGS) main.c $(NAME) -o test
+	@$(CC) $(CFLAGS) main.c $(NAME) -o test
 	@./test
 	@rm -f test
 
