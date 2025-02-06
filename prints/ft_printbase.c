@@ -6,15 +6,15 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:07:20 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/12/31 18:22:50 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:12:06 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libV.h"
+#include "../libV.h"
 
 int	ft_printbase(long n, char *base)
 {
-	int	base_size;
+	static unsigned short	base_size;
 
 	base_size = ft_strlen(base);
 	if (n < 0)
@@ -26,9 +26,21 @@ int	ft_printbase(long n, char *base)
 			+ ft_printbase(n % base_size, base));
 }
 
+int	ft_printubase(unsigned long n, char *base)
+{
+	static unsigned short	base_size;
+
+	base_size = ft_strlen(base);
+	if (n < base_size)
+		return (ft_printchar(base[n]));
+	else
+		return (ft_printubase(n / base_size, base)
+			+ ft_printubase(n % base_size, base));
+}
+
 int	ft_printbase_fd(long n, char *base, int fd)
 {
-	int	base_size;
+	static int	base_size;
 
 	base_size = ft_strlen(base);
 	if (n < 0)
@@ -40,14 +52,27 @@ int	ft_printbase_fd(long n, char *base, int fd)
 			+ ft_printbase_fd(n % base_size, base, fd));
 }
 
-/* int	ft_printubase(unsigned long n, char *base)
+int	ft_printubase_fd(unsigned long n, char *base, int fd)
 {
-	unsigned long	base_size;
+	static unsigned short	base_size;
 
 	base_size = ft_strlen(base);
 	if (n < base_size)
-		return (lprint_chr(base[n]));
+		return (ft_printchar_fd(base[n], fd));
 	else
-		return (lprint_hex(n / base_size, base)
-			+ lprint_hex(n % base_size, base));
-} */
+		return (ft_printubase_fd(n / base_size, base, fd)
+			+ ft_printubase_fd(n % base_size, base, fd));
+}
+
+int	ft_print_ptr(void *ptr)
+{
+	int				counter;
+	unsigned long	ptr_value;
+
+	if (!ptr)
+		return (ft_printstr("(nil)"));
+	ptr_value = (unsigned long)ptr;
+	counter = ft_printstr("0x");
+	counter += ft_printubase(ptr_value, HEXA_LOW);
+	return (counter);
+}

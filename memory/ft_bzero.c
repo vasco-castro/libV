@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 14:50:51 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 20:28:55 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/06 14:53:14 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	len;
+	char	*src;
 
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
+	src = (char *)s;
+	while (n-- > 0)
+		*(src++) = 0;
 }

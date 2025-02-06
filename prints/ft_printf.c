@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:48:01 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/12/31 18:54:08 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:22:06 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libV.h"
+#include "../libV.h"
 
 static int	printer(char format, va_list ap)
 {
@@ -18,21 +18,21 @@ static int	printer(char format, va_list ap)
 
 	counter = 0;
 	if (format == 'c')
-		counter = lprint_chr(va_arg(ap, int));
+		counter = ft_printchar(va_arg(ap, int));
 	else if (format == 's')
-		counter = lprint_str(va_arg(ap, char *));
+		counter = ft_printstr(va_arg(ap, char *));
 	else if (format == 'p')
-		counter = lprint_ptr(va_arg(ap, void *));
+		counter = ft_print_ptr(va_arg(ap, void *));
 	else if (format == 'd' || format == 'i')
-		counter = lprint_dig((long)va_arg(ap, int), DECIMAL);
+		counter = ft_printbase((long)va_arg(ap, int), DECIMAL);
 	else if (format == 'u')
-		counter = lprint_dig(va_arg(ap, unsigned int), DECIMAL);
+		counter = ft_printbase(va_arg(ap, unsigned int), DECIMAL);
 	else if (format == 'x')
-		counter = lprint_hex((long)va_arg(ap, unsigned int), HEXA_LOW);
+		counter = ft_printubase((long)va_arg(ap, unsigned int), HEXA_LOW);
 	else if (format == 'X')
-		counter = lprint_hex((long)va_arg(ap, unsigned int), HEXA_UP);
+		counter = ft_printubase((long)va_arg(ap, unsigned int), HEXA_UP);
 	else if (format == '%')
-		counter = lprint_chr(format);
+		counter = ft_printchar(format);
 	return (counter);
 }
 

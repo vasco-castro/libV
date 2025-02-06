@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/03 15:44:19 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:13:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,21 @@ int		ft_println(char *str);
 int		ft_println_fd(char *str, int fd);
 int		ft_printbase(long n, char *base);
 int		ft_printbase_fd(long n, char *base, int fd);
+int		ft_printubase(unsigned long n, char *base);
+int		ft_printubase_fd(unsigned long n, char *base, int fd);
+int		ft_print_ptr(void *ptr);
 int		ft_printf(const char *str, ...);
 
 /* FILE FUNCTIONS */
 char	*get_next_line(int fd);
+
+/* MEMORY FUNCTIONS */
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif

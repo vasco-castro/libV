@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 14:50:51 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 20:30:12 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/06 14:54:15 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	len;
+	char	*tmp_dst;
+	char	*tmp_src;
 
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
+	if (!src && !dst)
+		return (NULL);
+	tmp_dst = (char *) dst;
+	tmp_src = (char *) src;
+	while (n-- > 0)
+		*(tmp_dst++) = *(tmp_src++);
+	return (dst);
 }

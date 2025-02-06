@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 14:50:51 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/06 14:54:11 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	len;
+	unsigned char	*src;
+	size_t			i;
 
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
+	i = 0;
+	src = (unsigned char *) b;
+	c = (unsigned char) c;
+	while (i < len)
+		src[i++] = c;
+	return (b);
 }

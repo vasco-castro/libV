@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 14:50:51 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/13 20:58:29 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/06 14:53:00 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	len;
+	void	*alloc;
+	size_t	total_size;
 
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
+	total_size = count * size;
+	if (count && ((total_size / count) != size))
+		return (NULL);
+	alloc = malloc(total_size);
+	if (!alloc)
+		return (NULL);
+	ft_bzero(alloc, total_size);
+	return (alloc);
 }

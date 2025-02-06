@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 14:50:51 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 20:32:00 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/06 14:54:19 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	len;
+	unsigned char	*src;
+	unsigned char	chr;
 
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
+	src = (unsigned char *) s;
+	chr = (unsigned char) c;
+	while (n-- > 0)
+	{
+		if (*(src) == chr)
+			return ((void *) src);
+		src++;
+	}
+	return (NULL);
 }

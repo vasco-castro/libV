@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/28 21:14:06 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:50:05 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libV.h"
+#include "../libV.h"
 
 int	ft_isalnum(int c)
 {
