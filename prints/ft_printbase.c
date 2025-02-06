@@ -6,13 +6,13 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:07:20 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 15:12:06 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:38:28 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-int	ft_printbase(long n, char *base)
+int	ft_printbase(long n, const char *base)
 {
 	static unsigned short	base_size;
 
@@ -26,7 +26,7 @@ int	ft_printbase(long n, char *base)
 			+ ft_printbase(n % base_size, base));
 }
 
-int	ft_printubase(unsigned long n, char *base)
+int	ft_printubase(unsigned long n, const char *base)
 {
 	static unsigned short	base_size;
 
@@ -38,7 +38,7 @@ int	ft_printubase(unsigned long n, char *base)
 			+ ft_printubase(n % base_size, base));
 }
 
-int	ft_printbase_fd(long n, char *base, int fd)
+int	ft_printbase_fd(long n, const char *base, int fd)
 {
 	static int	base_size;
 
@@ -52,7 +52,7 @@ int	ft_printbase_fd(long n, char *base, int fd)
 			+ ft_printbase_fd(n % base_size, base, fd));
 }
 
-int	ft_printubase_fd(unsigned long n, char *base, int fd)
+int	ft_printubase_fd(unsigned long n, const char *base, int fd)
 {
 	static unsigned short	base_size;
 

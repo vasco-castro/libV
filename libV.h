@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 15:13:42 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:40:08 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int		ft_printstr(char *str);
 int		ft_printstr_fd(char *str, int fd);
 int		ft_println(char *str);
 int		ft_println_fd(char *str, int fd);
-int		ft_printbase(long n, char *base);
-int		ft_printbase_fd(long n, char *base, int fd);
-int		ft_printubase(unsigned long n, char *base);
-int		ft_printubase_fd(unsigned long n, char *base, int fd);
+int		ft_printbase(long n, const char *base);
+int		ft_printbase_fd(long n, const char *base, int fd);
+int		ft_printubase(unsigned long n, const char *base);
+int		ft_printubase_fd(unsigned long n, const char *base, int fd);
 int		ft_print_ptr(void *ptr);
 int		ft_printf(const char *str, ...);
 
