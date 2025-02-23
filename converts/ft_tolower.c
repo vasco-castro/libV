@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:57:15 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/03 15:41:46 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
+#include "../libft.h"
 
 int	ft_tolower(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:13:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/01/13 18:11:07 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:50:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
+#include "../libft.h"
 
 static int	line_len(char *str)
 {

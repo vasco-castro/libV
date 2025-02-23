@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:52:19 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/03 15:41:34 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
+#include "../libft.h"
 
 int	ft_toupper(int c)
 {

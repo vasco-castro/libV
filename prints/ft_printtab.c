@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 15:25:41 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 15:25:53 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
+#include "../libft.h"
 
 int	ft_printtab(char *tab[])
 {

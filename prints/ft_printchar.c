@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 17:59:07 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 14:50:36 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
+#include "../libft.h"
 
 int	ft_printchar(int c)
 {
