@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 17:04:25 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:52:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+char	*ft_strdup(const char *src)
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
+	int		len;
+	char	*dst;
+
+	if (!src)
+		return (NULL);
+	len = ft_strlen(src);
+	dst = malloc(len + 1);
+	if (!dst)
+		return (NULL);
+	dst[len] = 0;
+	while (len-- > 0)
+		dst[len] = src[len];
+	return (dst);
 }

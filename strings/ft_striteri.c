@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/17 18:32:18 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
+	size_t	i;
+
+	i = 0;
+	while (s && s[i] && f)
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

@@ -6,12 +6,13 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:46:11 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
+/* Return the total length of a string passed as 's' */
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

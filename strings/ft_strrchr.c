@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/07 19:17:19 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
+	unsigned int	i;
+	char			chr;
+	char			*rchr;
+
+	i = 0;
+	chr = (char) c;
+	rchr = NULL;
+	while (s[i])
+	{
+		if (s[i] == chr)
+			rchr = ((char *) &s[i]);
+		i++;
+	}
+	if (s[i] == chr)
+		rchr = ((char *) &s[i]);
+	return (rchr);
 }

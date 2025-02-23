@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   lists.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/23 17:47:01 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:47:03 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef LISTS_H
+# define LISTS_H
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+typedef struct s_list
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
-}
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+#endif

@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 17:33:05 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (needle[0] == 0)
+		return ((char *) haystack);
+	while (haystack[i] && i < len)
+	{
+		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
+		{
+			j++;
+			if (needle[j] == 0)
+				return ((char *) &haystack[i]);
+		}
+		j = 0;
+		i++;
+	}
+	return (NULL);
 }

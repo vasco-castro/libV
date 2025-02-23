@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 19:59:53 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
+	size_t	src_len;
+
+	src_len = ft_strlen(src);
+	if (src_len + 1 < dstsize)
+		ft_memcpy(dst, src, src_len + 1);
+	else if (dstsize != 0)
+	{
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = 0;
+	}
+	return (src_len);
 }

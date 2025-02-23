@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isgraph.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/08 16:28:13 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-/**
- * All graphical characters.
- * Combination of:
- * isalnum + ispunct;
- * isprint - isspace;
- */
-int	ft_isgraph(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (ft_isalnum(c) || ft_ispunct(c));
+	size_t	i;
+	size_t	r;
+
+	i = 0;
+	r = 0;
+	while ((s1[i] || s2[i]) && (i < n) && (r == 0))
+	{
+		r = (unsigned char)s1[i] - (unsigned char)s2[i];
+		i++;
+	}
+	return (r);
 }
