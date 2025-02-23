@@ -6,10 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:11:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/28 21:12:18 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:02:04 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* All lowercase chars: a-z */
 int	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');

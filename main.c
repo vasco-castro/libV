@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 16:40:45 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:29:12 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int	main(int argc, char const *argv[])
 	if (!str)
 		exit(1);
 	ft_printf("%s, has the size of %d, %p\n", str, ft_strlen(str), &str);
+	ft_printf("And the 5th char: %c in str is a cntrl character: %d\n", str[4], ft_iscntrl(str[4]));
+	str = get_next_line(1);
+	printf("GNL: %s!\n",str);
 	free(str);
 	return (0);
 }

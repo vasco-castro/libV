@@ -6,10 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:11:27 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/28 21:12:32 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:06:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* All uppercase characters: A-Z */
 int	ft_isupper(int c)
 {
 	return (c >= 'A' && c <= 'Z');

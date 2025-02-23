@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:12:04 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:06:15 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
-
-/* All alphabet and digit characters, combination of isalpha + isdigit */
-int	ft_isalnum(int c)
+/* All white-space characters */
+int	ft_isspace(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return ((c >= 9 && c <= 13) || c == 32);
 }

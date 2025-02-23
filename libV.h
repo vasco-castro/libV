@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/06 16:40:08 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:16:19 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdbool.h>
 
-# ifndef FOPEN_MAX
-#  define FOPEN_MAX 512
-# endif
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
@@ -47,9 +45,15 @@ int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
+int		ft_isxdigit(int c);
 int		ft_isalnum(int c);
-int		ft_isascii(int c);
+int		ft_isblank(int c);
+int		ft_isspace(int c);
+int		ft_ispunct(int c);
+int		ft_isgraph(int c);
+int		ft_iscntrl(int c);
 int		ft_isprint(int c);
+int		ft_isascii(int c);
 
 /* CONVERTION FUNCTIONS */
 int		ft_atoi(const char *str);
@@ -67,6 +71,7 @@ int		ft_printstr(char *str);
 int		ft_printstr_fd(char *str, int fd);
 int		ft_println(char *str);
 int		ft_println_fd(char *str, int fd);
+int		ft_printtab(char *tab[]);
 int		ft_printbase(long n, const char *base);
 int		ft_printbase_fd(long n, const char *base, int fd);
 int		ft_printubase(unsigned long n, const char *base);

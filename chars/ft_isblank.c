@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:12:04 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:52:46 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:08:12 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libV.h"
-
-/* All alphabet and digit characters, combination of isalpha + isdigit */
-int	ft_isalnum(int c)
+/* Space or Horizontal Tab character */
+int	ft_isblank(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (c == '\t' || c == 32);
 }

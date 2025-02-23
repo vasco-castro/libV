@@ -6,10 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:53:55 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/08 18:39:15 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:02:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* All digits chars: 0-9 */
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');

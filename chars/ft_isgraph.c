@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:12:04 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:15:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-/* All alphabet and digit characters, combination of isalpha + isdigit */
-int	ft_isalnum(int c)
+/* All graphical characters, combination of isalnum + ispunct or isprint - isspace */
+int	ft_isgraph(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (ft_isalnum(c) || ft_ispunct(c));
 }

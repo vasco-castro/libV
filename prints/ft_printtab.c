@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_printtab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:12:04 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/23 15:25:41 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 15:25:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libV.h"
 
-/* All alphabet and digit characters, combination of isalpha + isdigit */
-int	ft_isalnum(int c)
+int	ft_printtab(char *tab[])
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (tab[i])
+		count += ft_println(tab[i++]);
+	return (count);
 }
