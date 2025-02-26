@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:01:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:50:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:48:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../inc/ctype.h"
+
 /**
- * All ascii characters (printable and non-printable).
+ * All graphical characters.
  * Combination of:
- * iscntrl + isprint;
+ * isalnum + ispunct;
+ * isprint - isspace;
  */
-int	ft_isascii(int c)
+bool	ft_isgraph(int c)
 {
-	return (c >= 0 && c <= 127);
+	return (ft_isalnum(c) || ft_ispunct(c));
 }

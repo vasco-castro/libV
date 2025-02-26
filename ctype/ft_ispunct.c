@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_ispunct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:06:44 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/ctype.h"
 
-/* All alphabet and digit characters, combination of isalpha + isdigit */
-int	ft_isalnum(int c)
+/**
+ * All punctuation characters.
+ * ex:'[{()}]/?`~!@#$%^&*-+=_\|;:",<.>'
+ */
+bool	ft_ispunct(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return ((c >= 33 && c <= 47) || (c >= 58 && c <= 64)
+		|| (c >= 91 && c <= 96) || (c >= 123 && c <= 126));
 }

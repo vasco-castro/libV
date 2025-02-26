@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:11:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:02:04 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 14:53:55 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:02:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All lowercase chars: a-z */
-int	ft_islower(int c)
+#include "../inc/ctype.h"
+
+/**
+ * All digits characters: 0-9
+ */
+bool	ft_isdigit(int c)
 {
-	return (c >= 'a' && c <= 'z');
+	return (c >= '0' && c <= '9');
 }

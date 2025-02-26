@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:48:11 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:49:55 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:52:46 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:08:12 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/ctype.h"
 
 /**
- * All printable characters.
- * Combination of:
- * isgraph + SPACE character (32)
+ * Space (32) or Horizontal Tab character (9).
  */
-int	ft_isprint(int c)
+bool	ft_isblank(int c)
 {
-	return (ft_isgraph(c) || (c == ' '));
-	return (c >= 32 && c <= 126);
+	return (c == '\t' || c == 32);
 }

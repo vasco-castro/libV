@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 16:52:46 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:08:12 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:06:15 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Space or Horizontal Tab character */
-int	ft_isblank(int c)
+#include "../inc/ctype.h"
+
+/**
+ * All white-space characters
+ */
+bool	ft_isspace(int c)
 {
-	return (c == '\t' || c == 32);
+	return ((c >= 9 && c <= 13) || c == 32);
 }

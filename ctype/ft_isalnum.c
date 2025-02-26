@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
+/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
 /*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/ctype.h"
 
-/* All alphabet characters, combination of isupper + islower */
-int	ft_isalpha(int c)
+/**
+ * All alphabet and digit characters.
+ * Combination of ft_isalpha + ft_isdigit.
+ */
+bool	ft_isalnum(int c)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

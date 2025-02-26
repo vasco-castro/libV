@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:09:47 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 15:48:11 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:49:55 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Every non-printable characters and isspace characters */
-int	ft_iscntrl(int c)
+#include "../inc/ctype.h"
+
+/**
+ * All printable characters.
+ * Combination of:
+ * isgraph + SPACE character (32)
+ */
+bool	ft_isprint(int c)
 {
-	return (c >= 0 && c <= 31 || c == 127);
+	return (ft_isgraph(c) || (c == ' '));
+	return (c >= 32 && c <= 126);
 }

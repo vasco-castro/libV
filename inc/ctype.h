@@ -1,17 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ctype.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:11:27 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:06:22 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/26 11:51:40 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/26 12:22:59 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All uppercase characters: A-Z */
-int	ft_isupper(int c)
-{
-	return (c >= 'A' && c <= 'Z');
-}
+#ifndef CTYPE_H
+# define CTYPE_H
+
+# include <stdbool.h>
+
+bool  ft_isupper(int c);
+bool  ft_islower(int c);
+bool  ft_isalpha(int c);
+bool  ft_isdigit(int c);
+bool  ft_isxdigit(int c);
+bool  ft_isalnum(int c);
+bool  ft_isblank(int c);
+bool  ft_isspace(int c);
+bool  ft_ispunct(int c);
+bool  ft_isgraph(int c);
+bool  ft_iscntrl(int c);
+bool  ft_isprint(int c);
+bool  ft_isascii(int c);
+
+#endif

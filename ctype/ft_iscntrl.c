@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ispunct.c                                       :+:      :+:    :+:   */
+/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:06:44 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:09:47 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All punctuation characters, ex:'[{()}]/?`~!@#$%^&*-+=_\|;:",<.>' */
-int	ft_ispunct(int c)
+#include "../inc/ctype.h"
+
+/** 
+ * Every non-printable characters characters.
+ */
+bool	ft_iscntrl(int c)
 {
-	return ((c >= 33 && c <= 47) || (c >= 58 && c <= 64)
-		|| (c >= 91 && c <= 96) || (c >= 123 && c <= 126));
+	return (c >= 0 && c <= 31 || c == 127);
 }
