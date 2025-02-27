@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   files.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:28:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/27 17:47:01 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/27 17:47:03 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/string.h"
+#ifndef FILES_H
+# define FILES_H
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t i;
-	size_t r;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	i = 0;
-	r = 0;
-	while ((s1[i] || s2[i]) && (i < n) && (r == 0))
-	{
-		r = (unsigned char)s1[i] - (unsigned char)s2[i];
-		i++;
-	}
-	return (r);
-}
+# include <fcntl.h>
+# include "libft.h"
+
+char	*get_next_line(int fd);
+
+#endif

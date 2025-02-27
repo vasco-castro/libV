@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/memory.h"
 
 int	ft_printbase(long n, const char *base)
 {

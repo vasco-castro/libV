@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:28:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 19:14:40 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/string.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t i;
-	size_t r;
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <stdarg.h>
+# include <limits.h>
+# include <stdbool.h>
 
-	i = 0;
-	r = 0;
-	while ((s1[i] || s2[i]) && (i < n) && (r == 0))
-	{
-		r = (unsigned char)s1[i] - (unsigned char)s2[i];
-		i++;
-	}
-	return (r);
-}
+# include "converts.h"
+# include "ctype.h"
+# include "files.h"
+# include "lists.h"
+# include "memory.h"
+# include "prints.h"
+# include "string.h"
+
+#endif

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_tkncount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:28:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:30:49 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/string.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+/**
+ * Counts tokens inside a string, which the limiter is char c.
+ */
+size_t ft_tkncount(char *str, char c)
 {
-	size_t i;
-	size_t r;
+	size_t	i;
+	size_t	tokens;
 
 	i = 0;
-	r = 0;
-	while ((s1[i] || s2[i]) && (i < n) && (r == 0))
+	tokens = 0;
+	while (str[i])
 	{
-		r = (unsigned char)s1[i] - (unsigned char)s2[i];
-		i++;
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
+		{
+			while (str[i] && str[i] != c)
+				i++;
+			tokens++;
+		}
 	}
-	return (r);
+	return (tokens);
 }

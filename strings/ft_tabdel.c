@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/string.h"
 
-void	*ft_tabdel(char **tab, size_t len)
+void *ft_tabdel(char **tab, size_t len)
 {
 	while (len)
 		free(tab[len--]);

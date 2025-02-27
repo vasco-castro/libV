@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/string.h"
 
 /**
  * Returns a allocated sub-string:
  * Starting at the position passed as 'start';
  * Inside the string passed as 's';
  * With the total length passed as 'len';
-*/
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+ */
+char *ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	slen;
-	char	*sub;
+	size_t slen;
+	char *sub;
 
 	slen = ft_strlen(s);
 	if (start > slen)

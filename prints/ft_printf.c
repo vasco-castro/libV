@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/memory.h"
 
 static int	printer(char format, va_list ap)
 {

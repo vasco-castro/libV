@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   lists.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:28:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/23 17:47:01 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:47:03 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/string.h"
+#ifndef LISTS_H
+#define LISTS_H
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+#include "libft.h"
+
+typedef struct s_list
 {
-	size_t i;
-	size_t r;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-	i = 0;
-	r = 0;
-	while ((s1[i] || s2[i]) && (i < n) && (r == 0))
-	{
-		r = (unsigned char)s1[i] - (unsigned char)s2[i];
-		i++;
-	}
-	return (r);
-}
+#endif

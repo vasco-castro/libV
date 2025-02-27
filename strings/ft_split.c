@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/string.h"
 
+/**
+ * Counts tokens inside a string
+ */
 static int	count_tokens(char *str, char c)
 {
 	size_t	i;
@@ -55,7 +58,7 @@ static char	**split(const char *s, char c, char	**tab, size_t words)
 	{
 		while (s[j] && s[j] == c)
 			j++;
-		wlen = tokenlen(s + j, c);
+		wlen = ft_tkncount(s + j, c);
 		tab[i] = ft_substr(s + j, 0, wlen);
 		if (!tab[i])
 			return (ft_tabdel(tab, i));
@@ -73,7 +76,7 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = count_tokens((char *) s, c);
+	words = ft_ntoken((char *) s, c);
 	tab = malloc((words + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
