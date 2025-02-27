@@ -17,7 +17,6 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# include <fcntl.h>
 # include "libft.h"
 
 char	*get_next_line(int fd);
