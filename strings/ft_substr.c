@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:20:49 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:45:35 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:21:54 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
  * Inside the string passed as 's';
  * With the total length passed as 'len';
  */
-char *ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t slen;
-	char *sub;
+	size_t	slen;
+	char	*sub;
 
 	slen = ft_strlen(s);
 	if (start > slen)

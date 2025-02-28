@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:30:49 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:28:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * Counts tokens inside a string, which the limiter is char c.
  */
-size_t ft_tkncount(char *str, char c)
+size_t	ft_tkncount(const char *str, char c)
 {
 	size_t	i;
 	size_t	tokens;

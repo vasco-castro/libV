@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists.h                                            :+:      :+:    :+:   */
+/*   prints.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 17:47:01 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:47:03 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:17:48 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:17:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LISTS_H
-# define LISTS_H
+#ifndef PRINTS_H
+# define PRINTS_H
 
 # ifndef DECIMAL
 #  define DECIMAL "0123456789"

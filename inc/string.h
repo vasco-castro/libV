@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 11:51:40 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/26 12:22:59 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:18:14 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:29:59 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRING_H
-#define STRING_H
+# define STRING_H
 
 # include "libft.h"
 
@@ -35,7 +35,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 void	*ft_tabdel(char **tab, size_t len);
 
-size_t	ft_strntkn(char *str, char c);
-size_t	ft_tkncount(char *str, char c);
+size_t	ft_tknlen(const char *tkn, char c);
+size_t	ft_tkncount(const char *str, char c);
 
 #endif
