@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:13:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:50:53 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:57:16 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	*get_next_line(int fd)
 			return (NULL);
 		if (line[line_len(line)] == '\n')
 			return (line);
+		c_read = read(fd, buf[fd], BUFFER_SIZE);
 	}
 	if (c_read < 0)
 		return (free(line), NULL);
