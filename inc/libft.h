@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 19:14:40 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/memory.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	unsigned char	*src;
-	size_t			i;
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <stdbool.h>
+# include <stdarg.h>
+# include <limits.h>
+# include <fcntl.h>
 
-	i = 0;
-	src = (unsigned char *) b;
-	c = (unsigned char) c;
-	while (i < len)
-		src[i++] = c;
-	return (b);
-}
+# include "converts.h"
+# include "ctype.h"
+# include "files.h"
+# include "lists.h"
+# include "memory.h"
+# include "prints.h"
+# include "string.h"
+
+#endif

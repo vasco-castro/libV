@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/28 21:11:56 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:02:04 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/memory.h"
+#include "../inc/ctype.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+/** 
+ * All lowercase characters: a-z
+ */
+bool	ft_islower(int c)
 {
-	unsigned char	*src;
-	size_t			i;
-
-	i = 0;
-	src = (unsigned char *) b;
-	c = (unsigned char) c;
-	while (i < len)
-		src[i++] = c;
-	return (b);
+	return (c >= 'a' && c <= 'z');
 }

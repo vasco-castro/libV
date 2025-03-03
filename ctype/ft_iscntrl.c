@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:57:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:09:47 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/ctype.h"
 
-/* All alphabet and digit characters, combination of isalpha + isdigit */
-int	ft_isalnum(int c)
+/** 
+ * Every non-printable characters characters.
+ */
+bool	ft_iscntrl(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (c >= 0 && c <= 31 || c == 127);
 }

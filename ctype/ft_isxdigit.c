@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isxdigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:01:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:50:53 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 14:53:55 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:33:20 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * All ascii characters (printable and non-printable).
- * Combination of:
- * iscntrl + isprint;
+#include "../inc/ctype.h"
+
+/** 
+ * All hexadecimal characters:
+ * 0-9 (ft_isdigit), A-F, a-f
  */
-int	ft_isascii(int c)
+bool	ft_isxdigit(int c)
 {
-	return (c >= 0 && c <= 127);
+	return (((c >= 'a' && c <= 'f')
+			|| (c >= 'A' && c <= 'F')) || ft_isdigit(c));
 }

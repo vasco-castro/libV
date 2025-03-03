@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:11:27 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:06:22 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:52:46 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:08:12 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All uppercase characters: A-Z */
-int	ft_isupper(int c)
+#include "../inc/ctype.h"
+
+/**
+ * Space (32) or Horizontal Tab character (9).
+ */
+bool	ft_isblank(int c)
 {
-	return (c >= 'A' && c <= 'Z');
+	return (c == '\t' || c == 32);
 }

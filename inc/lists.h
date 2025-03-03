@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   lists.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:18:07 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:20:29 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/memory.h"
+#ifndef LISTS_H
+# define LISTS_H
 
-void	*ft_memset(void *b, int c, size_t len)
+# include "libft.h"
+
+typedef struct s_list
 {
-	unsigned char	*src;
-	size_t			i;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-	i = 0;
-	src = (unsigned char *) b;
-	c = (unsigned char) c;
-	while (i < len)
-		src[i++] = c;
-	return (b);
-}
+#endif

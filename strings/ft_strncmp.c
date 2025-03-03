@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:28:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:22:51 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/string.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

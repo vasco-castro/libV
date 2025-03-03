@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:53:55 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:02:42 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All digits chars: 0-9 */
-int	ft_isdigit(int c)
+#include "../inc/ctype.h"
+
+/**
+ * All alphabet characters.
+ * Combination of ft_isupper + ft_islower.
+ */
+bool	ft_isalpha(int c)
 {
-	return (c >= '0' && c <= '9');
+	return (ft_isupper(c) || ft_islower(c));
 }

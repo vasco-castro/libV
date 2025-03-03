@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:53:43 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:35:57 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "inc/libft.h"
 
 int	main(int argc, char const *argv[])
 {

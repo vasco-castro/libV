@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tknlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:29:48 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/memory.h"
+#include "../inc/string.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+/**
+ * Returns a token lenght, which the limiter is char c.
+ */
+size_t	ft_tknlen(const char *tkn, char c)
 {
-	unsigned char	*src;
-	size_t			i;
+	size_t	len;
 
-	i = 0;
-	src = (unsigned char *) b;
-	c = (unsigned char) c;
-	while (i < len)
-		src[i++] = c;
-	return (b);
+	len = 0;
+	while (tkn && tkn[len] && tkn[len] != c)
+		len++;
+	return (len);
 }

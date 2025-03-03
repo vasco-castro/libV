@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:13:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:06:15 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/ctype.h"
 
-/* All alphabet characters, combination of isupper + islower */
-int	ft_isalpha(int c)
+/**
+ * All white-space characters
+ */
+bool	ft_isspace(int c)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	return ((c >= 9 && c <= 13) || c == 32);
 }

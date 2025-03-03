@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/ctype.h"
 
 /**
  * All printable characters.
  * Combination of:
  * isgraph + SPACE character (32)
  */
-int	ft_isprint(int c)
+bool	ft_isprint(int c)
 {
 	return (ft_isgraph(c) || (c == ' '));
 	return (c >= 32 && c <= 126);

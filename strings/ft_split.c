@@ -6,42 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:30:49 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:34:25 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-static int	count_tokens(char *str, char c)
-{
-	size_t	i;
-	size_t	words;
-
-	i = 0;
-	words = 0;
-	while (str[i])
-	{
-		while (str[i] && str[i] == c)
-			i++;
-		if (str[i])
-		{
-			while (str[i] && str[i] != c)
-				i++;
-			words++;
-		}
-	}
-	return (words);
-}
-
-static size_t	tokenlen(const char *str, char c)
-{
-	size_t	len;
-
-	len = 0;
-	while (str[len] && str[len] != c)
-		len++;
-	return (len);
-}
+#include "../inc/string.h"
 
 static char	**split(const char *s, char c, char	**tab, size_t words)
 {
@@ -55,7 +24,7 @@ static char	**split(const char *s, char c, char	**tab, size_t words)
 	{
 		while (s[j] && s[j] == c)
 			j++;
-		wlen = tokenlen(s + j, c);
+		wlen = ft_tknlen(s + j, c);
 		tab[i] = ft_substr(s + j, 0, wlen);
 		if (!tab[i])
 			return (ft_tabdel(tab, i));
@@ -73,7 +42,7 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = count_tokens((char *) s, c);
+	words = ft_tkncount((char *) s, c);
 	tab = malloc((words + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);

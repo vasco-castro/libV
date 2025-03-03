@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:06:15 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/10/28 15:01:56 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 17:50:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All white-space characters */
-int	ft_isspace(int c)
+#include "../inc/ctype.h"
+
+/**
+ * All ascii characters (printable and non-printable).
+ * Combination of: ft_iscntrl + ft_isprint;
+ */
+bool	ft_isascii(int c)
 {
-	return ((c >= 9 && c <= 13) || c == 32);
+	return (c >= 0 && c <= 127);
 }

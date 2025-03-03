@@ -10,12 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-static int	isspace(int c)
-{
-	return ((c >= 9 && c <= 13) || c == 32);
-}
+#include "../inc/libft.h"
 
 static int	issignal(int c)
 {
@@ -36,7 +31,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	signal = 1;
 	nb = 0;
-	while (isspace(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
 	if (issignal(str[i]) != 0)
 		signal *= issignal(str[i++]);

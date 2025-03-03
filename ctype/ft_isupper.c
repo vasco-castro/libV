@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:11:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:02:04 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/28 21:11:27 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/23 16:06:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* All lowercase chars: a-z */
-int	ft_islower(int c)
+#include "../inc/ctype.h"
+
+/**
+ * All uppercase characters: A-Z
+ */
+bool	ft_isupper(int c)
 {
-	return (c >= 'a' && c <= 'z');
+	return (c >= 'A' && c <= 'Z');
 }

@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 19:17:19 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:10 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/28 21:22:28 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/string.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -19,15 +19,15 @@ char	*ft_strrchr(const char *s, int c)
 	char			*rchr;
 
 	i = 0;
-	chr = (char) c;
+	chr = (char)c;
 	rchr = NULL;
 	while (s[i])
 	{
 		if (s[i] == chr)
-			rchr = ((char *) &s[i]);
+			rchr = ((char *)&s[i]);
 		i++;
 	}
 	if (s[i] == chr)
-		rchr = ((char *) &s[i]);
+		rchr = ((char *)&s[i]);
 	return (rchr);
 }

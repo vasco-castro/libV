@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ctype.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:18:32 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:18:33 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/memory.h"
+#ifndef CTYPE_H
+# define CTYPE_H
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	unsigned char	*src;
-	size_t			i;
+# include "libft.h"
 
-	i = 0;
-	src = (unsigned char *) b;
-	c = (unsigned char) c;
-	while (i < len)
-		src[i++] = c;
-	return (b);
-}
+bool	ft_isupper(int c);
+bool	ft_islower(int c);
+bool	ft_isalpha(int c);
+bool	ft_isdigit(int c);
+bool	ft_isxdigit(int c);
+bool	ft_isalnum(int c);
+bool	ft_isblank(int c);
+bool	ft_isspace(int c);
+bool	ft_ispunct(int c);
+bool	ft_isgraph(int c);
+bool	ft_iscntrl(int c);
+bool	ft_isprint(int c);
+bool	ft_isascii(int c);
+
+#endif

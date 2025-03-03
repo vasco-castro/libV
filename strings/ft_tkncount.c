@@ -1,17 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ft_tkncount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 16:42:21 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:09:47 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:28:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Every non-printable characters and isspace characters */
-int	ft_iscntrl(int c)
+#include "../inc/string.h"
+
+/**
+ * Counts tokens inside a string, which the limiter is char c.
+ */
+size_t	ft_tkncount(const char *str, char c)
 {
-	return (c >= 0 && c <= 31 || c == 127);
+	size_t	i;
+	size_t	tokens;
+
+	i = 0;
+	tokens = 0;
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
+		{
+			while (str[i] && str[i] != c)
+				i++;
+			tokens++;
+		}
+	}
+	return (tokens);
 }

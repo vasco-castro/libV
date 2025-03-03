@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   converts.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 16:52:46 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:08:12 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:18:37 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/02/28 21:18:40 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Space or Horizontal Tab character */
-int	ft_isblank(int c)
-{
-	return (c == '\t' || c == 32);
-}
+#ifndef CONVERTS_H
+# define CONVERTS_H
+
+# include "libft.h"
+
+int		ft_atoi(const char *str);
+char	*ft_itoa(int n);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
+
+#endif
