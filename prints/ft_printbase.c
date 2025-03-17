@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:07:20 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:17:55 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/memory.h"
+#include "../inc/prints.h"
 
 int	ft_printbase(long n, const char *base)
 {
@@ -62,17 +62,4 @@ int	ft_printubase_fd(unsigned long n, const char *base, int fd)
 	else
 		return (ft_printubase_fd(n / base_size, base, fd)
 			+ ft_printubase_fd(n % base_size, base, fd));
-}
-
-int	ft_print_ptr(void *ptr)
-{
-	int				counter;
-	unsigned long	ptr_value;
-
-	if (!ptr)
-		return (ft_printstr("(nil)"));
-	ptr_value = (unsigned long)ptr;
-	counter = ft_printstr("0x");
-	counter += ft_printubase(ptr_value, HEXA_LOW);
-	return (counter);
 }

@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/28 21:35:57 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:27:04 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int argc, char const *argv[])
 {
 	char	*str;
+	bool	printed;
 
 	if (argc <= 1)
 	{
@@ -29,7 +30,9 @@ int	main(int argc, char const *argv[])
 		exit(1);
 	ft_printf("%s, has the size of %d, %p\n", str, ft_strlen(str), &str);
 	str = get_next_line(1);
-	printf("GNL: %s!\n", str);
+	ft_printf("GNL: %s!\n", str);
+	printed = ft_printf_fd("", 1);
+	ft_printf("Printed: %b", printed);
 	free(str);
 	return (0);
 }
