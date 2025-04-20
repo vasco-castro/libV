@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/03/06 17:27:04 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:56:57 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char const *argv[])
 
 	if (argc <= 1)
 	{
-		ft_println_fd("You must input at least one value!", 2);
+		ft_printf_fd(URED "You must input at least one value!\n" RESET, 2);
 		exit(1);
 	}
 	if (!**argv || !*argv || !argv[1])

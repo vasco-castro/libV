@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 19:14:40 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:37:30 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <limits.h>
 # include <fcntl.h>
 
+# include "colors.h"
 # include "converts.h"
 # include "ctype.h"
 # include "files.h"
