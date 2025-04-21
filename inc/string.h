@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:18:14 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/28 21:29:59 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:33:17 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	*ft_tabdel(char **tab, size_t len);
 
 size_t	ft_tknlen(const char *tkn, char c);
 size_t	ft_tkncount(const char *str, char c);
+
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
