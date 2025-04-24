@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   point.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/04/24 14:35:18 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/04/24 14:33:32 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/04/24 14:35:03 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef POINT_H
+# define POINT_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdint.h>
-# include <stdbool.h>
-# include <stdarg.h>
-# include <limits.h>
-# include <fcntl.h>
+# include "libft.h"
 
-# include "colors.h"
-# include "converts.h"
-# include "ctype.h"
-# include "files.h"
-# include "lists.h"
-# include "memory.h"
-# include "point.h"
-# include "prints.h"
-# include "string.h"
+typedef struct s_point
+{
+	size_t  x;
+	size_t  y;
+}	t_point;
 
-#endif
+#endif // POINT_H
