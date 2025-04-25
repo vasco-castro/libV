@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/04/20 19:56:57 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/04/25 03:12:20 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	main(int argc, char const *argv[])
 	str = get_next_line(1);
 	ft_printf("GNL: %s!\n", str);
 	printed = ft_printf_fd("", 1);
-	ft_printf("Printed: %b", printed);
+	ft_printf(RED "Printed: %b\n" RESET, printed);
+	ft_printf("Printed: %b\n", !printed);
 	free(str);
 	return (0);
 }

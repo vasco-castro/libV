@@ -21,7 +21,7 @@ re: fclean all
 
 t: $(NAME)
 	@echo Compiling main test file.
-	@$(COMPILE) main.c $(NAME) -o test.out
+	@$(COMPILE) main.c $(NAME) -o test
 #	@./test
 #	@echo Running main test file.
 #	@$(REMOVE) test
