@@ -1,4 +1,3 @@
-
 # Directories
 CVR_DIR	= ./converts/
 CTY_DIR = ./ctype/
@@ -21,12 +20,14 @@ STR_FTS = ft_strlen ft_tabdel \
 	ft_strdup ft_substr ft_strjoin ft_strtrim ft_split ft_strmapi ft_striteri ft_strcmp
 
 # All source files with suffix .c and prefix directories separated by spaces
-SRCS = $(addsuffix .c, $(addprefix $(CVR_DIR), $(CVR_FTS))) \
-	$(addsuffix .c, $(addprefix $(CTY_DIR), $(CTY_FTS))) \
-	$(addsuffix .c, $(addprefix $(FLS_DIR), $(FLS_FTS))) \
-	$(addsuffix .c, $(addprefix $(MMR_DIR), $(MMR_FTS))) \
-	$(addsuffix .c, $(addprefix $(PRT_DIR), $(PRT_FTS))) \
-	$(addsuffix .c, $(addprefix $(STR_DIR), $(STR_FTS))) \
+SRCS = $(addsuffix .c,
+	$(addprefix $(CVR_DIR), $(CVR_FTS)) \
+	$(addprefix $(CTY_DIR), $(CTY_FTS)) \
+	$(addprefix $(FLS_DIR), $(FLS_FTS)) \
+	$(addprefix $(MMR_DIR), $(MMR_FTS)) \
+	$(addprefix $(PRT_DIR), $(PRT_FTS)) \
+	$(addprefix $(STR_DIR), $(STR_FTS))
+)
 
 # Object files convertion
 OBJS := $(SRCS:%.c=%.o)

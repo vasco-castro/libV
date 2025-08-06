@@ -35,7 +35,7 @@ static int	printer(char format, va_list ap, int fd)
 		len = ft_printubase_fd((long)va_arg(ap, unsigned int), BASE_16, fd);
 	else if (format == F_HEXA_UP)
 		len = ft_printubase_fd((long)va_arg(ap, unsigned int), BASE_16_UP, fd);
-	else if (format == F_F)
+	else if (format == FORMATTER)
 		len = ft_printchar_fd(format, fd);
 	return (len);
 }
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 	va_start(ap, str);
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] == FORMATTER)
 			len += printer(str[++i], ap, 1);
 		else
 			len += ft_printchar(str[i]);
@@ -76,7 +76,7 @@ int	ft_printf_fd(const char *str, int fd, ...)
 	va_start(ap, fd);
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] == FORMATTER)
 			len += printer(str[++i], ap, fd);
 		else
 			len += ft_printchar_fd(str[i], fd);

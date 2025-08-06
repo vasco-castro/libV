@@ -13,6 +13,9 @@
 #ifndef PRINTS_H
 # define PRINTS_H
 
+#ifndef FORMATTER
+#define FORMATTER '%'
+#endif
 # ifndef F_CHAR
 #  define F_CHAR 'c'
 # endif
@@ -45,9 +48,6 @@
 # endif
 # ifndef F_HEXA_UP
 #  define F_HEXA_UP 'X'
-# endif
-# ifndef F_F
-#  define F_F '%'
 # endif
 
 # ifndef BASE_10
