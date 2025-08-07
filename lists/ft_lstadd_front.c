@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 20:31:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/04/21 20:32:59 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/18 15:38:18 by vsoares-          #+#    #+#             */
+/*   Updated: 2024/11/18 23:41:09 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/string.h"
+#include "../inc/libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+/**
+ * Parameters:
+ * 		lst: The address of a pointer to the first node of a list.
+ * 		new: The address of a pointer to the node to be added.
+ * Return value: None
+ * External functs: None
+ * Description: Adds the node ’new’ at the beginning of the list.
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	return (ft_strncmp(s1, s2, (size_t)-1));
+	new->next = *lst;
+	*lst = new;
 }

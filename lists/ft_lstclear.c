@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 20:31:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/04/21 20:32:59 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/18 15:38:18 by vsoares-          #+#    #+#             */
+/*   Updated: 2024/11/18 23:47:15 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/string.h"
+#include "../inc/libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	return (ft_strncmp(s1, s2, (size_t)-1));
+	t_list	*current;
+	t_list	*tmp;
+
+	if (NULL == lst || NULL == del)
+		return ;
+	current = *lst;
+	while (current)
+	{
+		tmp = current;
+		current = current->next;
+		ft_lstdelone(tmp, del);
+	}
+	*lst = NULL;
 }

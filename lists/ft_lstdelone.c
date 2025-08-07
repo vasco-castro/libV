@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 20:31:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/04/21 20:32:59 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/18 15:38:18 by vsoares-          #+#    #+#             */
+/*   Updated: 2024/11/18 23:44:33 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/string.h"
+#include "../inc/libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+/// @param lst The node to free.
+/// @param del The address of the function used to delete the content.
+///
+/// Takes a node as parameter and frees its content
+/// using the function ’del’.Free the node itself but
+/// does NOT free the next node.
+void ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	return (ft_strncmp(s1, s2, (size_t)-1));
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
