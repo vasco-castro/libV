@@ -12,6 +12,12 @@
 
 #include "../inc/libft.h"
 
+/**
+ * @brief Converts a lowercase letter to uppercase.
+ * @param c The character to be converted.
+ * @return The uppercase equivalent of the character if it is lowercase,
+ *         otherwise the character unchanged.
+ */
 int	ft_toupper(int c)
 {
 	if (ft_islower(c))
