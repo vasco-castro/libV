@@ -12,7 +12,7 @@ INC_DIR	= ./inc/
 # Source files
 CVR_FTS = ft_atoi ft_itoa ft_tolower ft_toupper
 CTY_FTS = ft_islower ft_isupper ft_isalpha ft_isdigit ft_isxdigit ft_isalnum ft_ispunct \
-			ft_isgraph ft_isprint ft_isblank ft_isspace ft_iscntrl ft_isascii
+			ft_isgraph ft_isprint ft_isblank ft_isspace ft_iscntrl ft_isascii ft_issign
 FLS_FTS = get_next_line
 LST_FTS = ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
 MMR_FTS = ft_bzero ft_calloc ft_memchr ft_memcmp ft_memcpy ft_memmove ft_memset

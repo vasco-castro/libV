@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ctype.h                                            :+:      :+:    :+:   */
+/*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 21:18:32 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/28 21:18:33 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/08/13 12:11:23 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/08/13 12:11:23 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CTYPE_H
-# define CTYPE_H
+#include "../inc/ctype.h"
 
-# include "libft.h"
-
-bool	ft_isupper(int c);
-bool	ft_islower(int c);
-bool	ft_isalpha(int c);
-bool	ft_isdigit(int c);
-bool	ft_isxdigit(int c);
-bool	ft_isalnum(int c);
-bool	ft_isblank(int c);
-bool	ft_isspace(int c);
-bool	ft_ispunct(int c);
-bool	ft_isgraph(int c);
-bool	ft_iscntrl(int c);
-bool	ft_isprint(int c);
-bool	ft_isascii(int c);
-
-int		ft_issign(int c);
-
-#endif
+/**
+ * @brief Checks if a character is a sign ('+' or '-').
+ *
+ * @param c The character to check.
+ * @return 0 if the character is not a sign, 1 if it is '+', or -1 if it is '-'.
+ */
+int	ft_issign(int c)
+{
+	if (c == '+')
+		return (1);
+	else if (c == '-')
+		return (-1);
+	else
+		return (0);
+}

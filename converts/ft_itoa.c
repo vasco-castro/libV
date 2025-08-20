@@ -12,6 +12,11 @@
 
 #include "../inc/libft.h"
 
+/**
+ * @brief Calculates the number of digits in a number.
+ * @param nb The number to evaluate.
+ * @return The size of the number including sign if negative.
+ */
 static int	nbrsize(long nb)
 {
 	size_t	count;
@@ -32,6 +37,12 @@ static int	nbrsize(long nb)
 	return (count);
 }
 
+/**
+ * @brief Converts an integer to a string.
+ * @param n The integer to convert.
+ * @return The allocated string representing the integer,
+ *         or NULL if memory allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char	*number;
