@@ -13,9 +13,11 @@
 #ifndef PRINTS_H
 # define PRINTS_H
 
-#ifndef FORMATTER
-#define FORMATTER '%'
-#endif
+# include "libft.h"
+
+# ifndef FORMATTER
+#  define FORMATTER '%'
+# endif
 # ifndef F_CHAR
 #  define F_CHAR 'c'
 # endif
@@ -60,8 +62,6 @@
 #  define BASE_16_UP "0123456789ABCDEF"
 # endif
 
-# include "libft.h"
-
 int	ft_printbool(bool b);
 int	ft_printbool_fd(bool b, int fd);
 
@@ -85,6 +85,9 @@ int	ft_printubase_fd(unsigned long n, const char *base, int fd);
 
 int	ft_printptr(void *ptr);
 int	ft_printptr_fd(void *ptr, int fd);
+
+int	ft_printfile(const char *filepath);
+int	ft_printfile_fd(const char *filepath, int fd);
 
 int	ft_printf(const char *str, ...);
 int	ft_printf_fd(const char *str, int fd, ...);
