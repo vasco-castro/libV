@@ -13,20 +13,19 @@
 #include "../inc/libft.h"
 
 /**
- * Parameters lst: The beginning of the list.
- * Return value: The length of the list
- * External functs: None
- * Description: Counts the number of nodes in the list.
+ * @param lst: Pointer to the first node of the list.
+ * @return The number of nodes in the list.
+ * @brief Counts the number of nodes in a linked list.
  */
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	len;
 
-	i = 0;
+	len = 0;
 	while (lst)
 	{
 		lst = lst->next;
-		i++;
+		len++;
 	}
-	return (i);
+	return (len);
 }

@@ -13,17 +13,13 @@
 #include "../inc/libft.h"
 
 /**
- * Parameters content: The content to store in the new node.
- * Return value: A pointer to the new node.
- * External functs: malloc.
- * Description: Allocates memory (using malloc(3)) and returns
- * a new node. The ’content’ member variable is
- * initialized with the given parameter ’content’.
- * The variable ’next’ is initialized to NULL.
+ * @param content: Pointer to the content to be stored in the new node.
+ * @return Pointer to the newly created node, or NULL if allocation fails.
+ * @brief Creates a new node for a linked list.
  */
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *list;
+	t_list	*list;
 
 	list = malloc(sizeof(t_list));
 	if (!list)

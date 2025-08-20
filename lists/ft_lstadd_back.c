@@ -13,12 +13,9 @@
 #include "../inc/libft.h"
 
 /**
- * Parameters:
- * 		lst: The address of a pointer to the first node of a list.
- * 		new: The address of a pointer to the node to be added.
- * Return value: None.
- * External functs: None.
- * Description: Adds the node ’new’ at the end of the list.
+ * @param lst: Pointer to the pointer of the first node of the list.
+ * @param new: Pointer to the new node to be added.
+ * @brief Adds a new node at the end of a linked list.
  */
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

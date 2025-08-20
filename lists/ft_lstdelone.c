@@ -12,13 +12,12 @@
 
 #include "../inc/libft.h"
 
-/// @param lst The node to free.
-/// @param del The address of the function used to delete the content.
-///
-/// Takes a node as parameter and frees its content
-/// using the function ’del’.Free the node itself but
-/// does NOT free the next node.
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+/**
+ * @param lst: Pointer to the node to be deleted.
+ * @param del: Function pointer used to delete the content of the node.
+ * @brief Deletes and frees a single node from a linked list.
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && del)
 	{

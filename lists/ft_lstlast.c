@@ -13,16 +13,13 @@
 #include "../inc/libft.h"
 
 /**
- * Parameters lst: The beginning of the list.
- * Return value: Last node of the list
- * External functs: None
- * Description: Returns the last node of the list.
- * */
-t_list *ft_lstlast(t_list *lst)
+ * @param lst: Pointer to the first node of the list.
+ * @return Pointer to the last node of the list, or NULL if the list is empty.
+ * @brief Retrieves the last node of a linked list.
+ */
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
+	while (lst && lst->next)
 		lst = lst->next;
 	return (lst);
 }

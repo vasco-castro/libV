@@ -12,10 +12,18 @@
 
 #include "../inc/libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+/**
+ * @param lst: Pointer to the first node of the list.
+ * @param f: Function pointer to apply to the content of each node.
+ * @param del: Function pointer used to delete the content of nodes in case
+ *  of failure.
+ * @return Pointer to the new list, or NULL if allocation fails.
+ * @brief Creates a new list by applying a function to each node's content.
+ */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *list;
-	t_list *tmp;
+	t_list	*list;
+	t_list	*tmp;
 
 	if (!lst || !f || !del)
 		return (NULL);

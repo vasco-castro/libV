@@ -12,6 +12,11 @@
 
 #include "../inc/libft.h"
 
+/**
+ * @param lst: Pointer to the pointer of the first node of the list.
+ * @param del: Function pointer used to delete the content of each node.
+ * @brief Deletes and frees all nodes in a linked list.
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*current;
