@@ -16,12 +16,15 @@ clean:
 fclean: clean
 	@echo "Cleaning all $(NAME) files."
 	@$(REMOVE) $(NAME)
+	@$(REMOVE) test
 
 re: fclean all
 
-t: $(NAME)
+t: test
+
+test: $(NAME)
 	@echo Compiling main test file.
-	@$(COMPILE) main.c $(NAME) -o test
+	@$(COMPILE) -Iinclude src/main.c $(NAME) -o test
 #	@./test
 #	@echo Running main test file.
 #	@$(REMOVE) test
