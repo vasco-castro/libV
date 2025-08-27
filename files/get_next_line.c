@@ -12,6 +12,12 @@
 
 #include "../inc/libft.h"
 
+/**
+ * line_len - Calculates the length of a line up to a newline character.
+ * @str: The string to measure.
+ *
+ * Returns the length of the line or 0 if the string is NULL.
+ */
 static int	line_len(char *str)
 {
 	int	i;
@@ -24,17 +30,31 @@ static int	line_len(char *str)
 	return (i);
 }
 
+/**
+ * bufshift - Shifts the buffer content after processing a line.
+ * @buf: The buffer to shift.
+ * @size: The number of characters to shift.
+ *
+ * Moves the remaining content in the buffer to the start and zeroes the rest.
+ */
 static void	bufshift(char *buf, size_t size)
 {
 	int	i;
 
 	i = 0;
-	while (buf[size])
+	while (buf[size] && size < BUFFER_SIZE)
 		buf[i++] = buf[size++];
 	while (i < BUFFER_SIZE)
 		buf[i++] = 0;
 }
 
+/**
+ * line_append - Appends buffer content to the current line.
+ * @old_line: The existing line to append to.
+ * @buf: The buffer containing new content.
+ *
+ * Returns a new line with the buffer content appended. Frees old_line.
+ */
 static char	*line_append(char *old_line, char *buf)
 {
 	char	*new_line;
@@ -42,7 +62,6 @@ static char	*line_append(char *old_line, char *buf)
 	int		j;
 
 	i = 0;
-	j = 0;
 	new_line = malloc(line_len(old_line) + line_len(buf) + 2);
 	if (!new_line)
 		return (NULL);
@@ -51,37 +70,35 @@ static char	*line_append(char *old_line, char *buf)
 		new_line[i] = old_line[i];
 		i++;
 	}
-	while (buf[j] && buf[j - 1] != '\n')
+	j = 0;
+	while (buf[j] && (j == 0 || buf[j - 1] != '\n'))
 		new_line[i++] = buf[j++];
 	new_line[i] = 0;
 	bufshift(buf, j);
-	free(old_line);
-	return (new_line);
+	return (free(old_line), new_line);
 }
 
+/**
+ * get_next_line - Reads the next line from a file descriptor.
+ * @fd: The file descriptor to read from.
+ *
+ * Returns the next line from the file descriptor or NULL on error or EOF.
+ */
 char	*get_next_line(int fd)
 {
 	static char	buf[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
-	int			c_read;
 
 	if (fd < 0 || fd >= FOPEN_MAX || BUFFER_SIZE < 1)
 		return (NULL);
 	line = NULL;
-	if (buf[fd][0])
-		c_read = 1;
-	else
-		c_read = read(fd, buf[fd], BUFFER_SIZE);
-	while (c_read > 0)
+	while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE) > 0)
 	{
 		line = line_append(line, buf[fd]);
 		if (!line)
 			return (NULL);
 		if (line[line_len(line)] == '\n')
 			return (line);
-		c_read = read(fd, buf[fd], BUFFER_SIZE);
 	}
-	if (c_read < 0)
-		return (free(line), NULL);
 	return (line);
 }
