@@ -1,0 +1,64 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install norminette
+      run: |
+        pip install norminette
+        
+    - name: Run norminette
+      run: |
+        echo "Running norminette to check coding standards..."
+        norminette $(find . -name "*.c" -o -name "*.h" | grep -v test) || echo "Norminette found style issues - see output above"
+        
+    - name: Build library
+      run: |
+        make
+        
+    - name: Build test
+      run: |
+        make t
+        
+    - name: Run comprehensive tests
+      run: |
+        chmod +x ci_test.sh
+        ./ci_test.sh
+        
+    - name: Clean up
+      run: |
+        make fclean
+
+  docker-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Build Docker image
+      run: |
+        docker build -t libv:latest .
+        
+    - name: Test in Docker container
+      run: |
+        echo "Testing library build in Docker..."
+        docker run --rm libv:latest sh -c "chmod +x ci_test.sh && ./ci_test.sh"
+        echo "Running norminette in Docker..."
+        docker run --rm libv:latest sh -c "norminette \$(find . -name '*.c' -o -name '*.h' | grep -v test) || echo 'Norminette found style issues - see output above'"
