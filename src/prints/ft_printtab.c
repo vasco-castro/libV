@@ -19,7 +19,7 @@
  * @param tab Array of strings to print (must be NULL-terminated)
  * @return Total number of characters printed, or -1 if tab is NULL
  */
-int	ft_printtab(char *tab[])
+int	ft_printtab(char **tab)
 {
 	int	i;
 	int	count;
@@ -42,7 +42,7 @@ int	ft_printtab(char *tab[])
  * @return Total number of characters printed, or -1 if tab is NULL
  *         or fd is invalid
  */
-int	ft_printtab_fd(char *tab[], int fd)
+int	ft_printtab_fd(char **tab, int fd)
 {
 	int	i;
 	int	count;

@@ -31,9 +31,16 @@ int	main(int argc, char const *argv[])
 	ft_printf("%s, has the size of %d, %p\n", str, ft_strlen(str), &str);
 	str = get_next_line(1);
 	ft_printf("GNL: %s!\n", str);
+	free(str);
 	printed = ft_printf_fd("", 1);
 	ft_printf(RED "Printed: %b\n" RESET, printed);
 	ft_printf("Printed: %b\n", !printed);
-	free(str);
+
+	char **tab = malloc(sizeof(char *) * 3);
+	tab[0] = "Hello";
+	tab[1] = "World";
+	tab[2] = NULL;
+	ft_printf("Size of the tab: %d\n%t\n", sizeof(tab), tab);
+	free(tab);
 	return (0);
 }
