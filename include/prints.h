@@ -74,8 +74,8 @@ int	ft_printstr_fd(char *str, int fd);
 int	ft_println(char *str);
 int	ft_println_fd(char *str, int fd);
 
-int	ft_printtab(char *tab[]);
-int	ft_printtab_fd(char *tab[], int fd);
+int	ft_printtab(char **tab);
+int	ft_printtab_fd(char **tab, int fd);
 
 int	ft_printbase(long n, const char *base);
 int	ft_printbase_fd(long n, const char *base, int fd);
