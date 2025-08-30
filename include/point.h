@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:33:32 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/08/30 14:30:04 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/08/30 23:11:44 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef struct s_point
 {
-	size_t	x;
-	size_t	y;
+	int	x;
+	int	y;
 }	t_point;
 
 #endif // POINT_H
