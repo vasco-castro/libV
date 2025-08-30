@@ -1,30 +1,20 @@
 include config.mk
-include targets.mk
 
 NAME = libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "Building $(NAME)."
+	@$(BANNER)
 	@$(ARQUIVE) $(NAME) $(OBJS)
 
 clean:
-	@echo "Cleaning all objects."
+	@printf "$(YELLOW)Cleaning all objects.$(RESET)\n"
 	@$(REMOVE) $(OBJS)
 
 fclean: clean
-	@echo "Cleaning all $(NAME) files."
+	@printf "$(YELLOW)Cleaning all $(NAME) files.$(RESET)\n"
 	@$(REMOVE) $(NAME)
-	@$(REMOVE) test
+	@$(REMOVE) $(TEST)
 
 re: fclean all
-
-t: test
-
-test: $(NAME)
-	@echo Compiling main test file.
-	@$(COMPILE) -Iinclude src/main.c $(NAME) -o test
-#	@./test
-#	@echo Running main test file.
-#	@$(REMOVE) test
