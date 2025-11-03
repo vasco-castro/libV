@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabdel.c                                        :+:      :+:    :+:   */
+/*   ft_tabfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 17:24:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/03 20:55:52 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/11/03 20:55:45 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/11/03 20:56:02 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/string.h"
 
-/**
- * Frees all elements of a string tab, and the tab itself.
- */
-void	*ft_tabdel(char **tab, size_t len)
+void	ft_tabfree(char **tab)
 {
-	while (len)
-		free(tab[len--]);
-	free(tab[len]);
+	size_t	len;
+
+	if (!tab)
+		return ;
+	len = 0;
+	while (tab[len])
+		free(tab[len++]);
 	free(tab);
-	return (NULL);
 }

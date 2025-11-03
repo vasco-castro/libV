@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 14:38:04 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/08/12 14:38:04 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:08:43 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_printfile(const char *filepath)
  * @param fd File descriptor to print to
  * @return Number of characters printed, or -1 on error
  */
-int	ft_printfile_fd(const char *filepath, int fd)
+int	ft_printfile_fd(const char *filepath, int output_fd)
 {
 	int		fd;
 	int		count;

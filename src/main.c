@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/08/30 23:21:43 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/03 20:54:28 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char const *argv[])
 {
 	bool	printed;
 	char	**tab;
+	char	**tab2;
 
 	if (argc <= 1)
 		arg1(argc, argv);
@@ -62,6 +63,9 @@ int	main(int argc, char const *argv[])
 	tab[1] = "World";
 	tab[2] = NULL;
 	ft_printf("Size of the tab: %d\n%t\n", sizeof(tab), tab);
+	tab2 = ft_tabcpy(tab);
+	ft_printf("TabCopy of size %d:\n%t", ft_tablen(tab2), tab);
+	ft_tabdel(tab2, ft_tablen(tab));
 	free(tab);
-	return (0);
+	return (EXIT_SUCCESS);
 }
