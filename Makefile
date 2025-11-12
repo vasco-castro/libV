@@ -10,11 +10,10 @@ $(NAME): $(OBJS)
 
 clean:
 	@printf "$(YELLOW)Cleaning all objects.$(RESET)\n"
-	@$(REMOVE) $(OBJS)
+	@$(REMOVE) $(OBJS) $(TEST_OBJ)
 
 fclean: clean
 	@printf "$(YELLOW)Cleaning all $(NAME) files.$(RESET)\n"
-	@$(REMOVE) $(NAME)
-	@$(REMOVE) $(TEST)
+	@$(REMOVE) $(NAME) $(TEST)
 
 re: fclean all

@@ -6,13 +6,22 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/28 21:34:25 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/09/07 11:25:14 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/string.h"
 
-static char	**split(const char *s, char c, char	**tab, size_t words)
+/**
+ * @brief Fills the tab array with substrings split from s by delimiter c.
+ *
+ * @param s The input string to split.
+ * @param c The delimiter character.
+ * @param tab The array to fill with substrings.
+ * @param words The number of words/substrings to extract.
+ * @return The filled array of substrings, or NULL on failure.
+ */
+static char	**fill_tab(const char *s, char c, char	**tab, size_t words)
 {
 	size_t	i;
 	size_t	j;
@@ -35,6 +44,17 @@ static char	**split(const char *s, char c, char	**tab, size_t words)
 	return (tab);
 }
 
+/**
+ * @brief Splits a string into an array of substrings using a delimiter.
+ *
+ * This function allocates and returns an array of strings obtained by splitting
+ * the input string @p s using the character @p c as a delimiter. The array is
+ * terminated by a NULL pointer.
+ *
+ * @param s The input string to split.
+ * @param c The delimiter character.
+ * @return A NULL-terminated array of substrings, or NULL on failure.
+ */
 char	**ft_split(const char *s, char c)
 {
 	char	**tab;
@@ -42,9 +62,9 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = ft_tkncount((char *) s, c);
+	words = ft_tkncount(s, c);
 	tab = malloc((words + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
-	return (split(s, c, tab, words));
+	return (fill_tab(s, c, tab, words));
 }
