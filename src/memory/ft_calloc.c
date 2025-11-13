@@ -12,6 +12,19 @@
 
 #include "../../include/memory.h"
 
+/**
+ * @brief Allocates memory and initializes it to zero.
+ *
+ * This function allocates memory for an array of count elements of size bytes
+ * each and initializes all bytes in the allocated memory to zero.
+ * It includes overflow protection.
+ *
+ * @param count Number of elements to allocate
+ * @param size Size of each element in bytes
+ *
+ * @return A pointer to the allocated memory. Returns NULL if allocation fails
+ *         or if overflow would occur.
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*alloc;
