@@ -9,6 +9,7 @@ LST_DIR = lists/
 MMR_DIR = memory/
 PRT_DIR	= prints/
 STR_DIR	= strings/
+DBG_DIR = debug/
 
 # Source files
 CVR_FTS = ft_atoi ft_itoa ft_tolower ft_toupper
@@ -21,6 +22,7 @@ PRT_FTS = ft_printchar ft_printbool ft_printptr ft_printstr ft_printtab ft_print
 STR_FTS = ft_strlen ft_tabdel ft_tabcpy ft_tablen ft_tabfree \
 	ft_strchr ft_strrchr ft_strncmp ft_strnstr ft_strlcpy ft_strlcat \
 	ft_strdup ft_substr ft_strjoin ft_strtrim ft_split ft_strmapi ft_striteri ft_strcmp
+DBG_FTS = debug
 
 # All source files with suffix .c and prefix directories separated by spaces
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, \
@@ -31,6 +33,7 @@ SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, \
 	$(addprefix $(MMR_DIR), $(MMR_FTS)) \
 	$(addprefix $(PRT_DIR), $(PRT_FTS)) \
 	$(addprefix $(STR_DIR), $(STR_FTS)) \
+	$(addprefix $(DBG_DIR), $(DBG_FTS)) \
 ))
 
 # Object files convertion

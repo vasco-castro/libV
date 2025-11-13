@@ -44,7 +44,7 @@ void	arg0(int argc, char const *argv[])
 	free(str);
 }
 
-int	main(int argc, char const *argv[])
+void	example_test_1(int argc, char const *argv[])
 {
 	bool	printed;
 	char	**tab;
@@ -67,5 +67,37 @@ int	main(int argc, char const *argv[])
 	ft_printf("TabCopy of size %d:\n%t", ft_tablen(tab2), tab);
 	ft_tabdel(tab2, ft_tablen(tab));
 	free(tab);
+}
+
+void	example_test_2(void)
+{
+	if (ft_issign('A'))
+		ft_printf("A\n");
+	if (ft_issign('4'))
+		ft_printf("4\n");
+	if (ft_issign('2'))
+		ft_printf("2\n");
+	if (ft_issign('-'))
+		ft_printf("-\n");
+	if (ft_issign('+'))
+		ft_printf("+\n");
+	if (ft_issign('='))
+		ft_printf("=\n");
+}
+
+void	example_test_3(void)
+{
+	ft_printf("DEBUG MODE: %b\n", debug_mode());
+	debug("DEBUG MODE: %b\n", debug_mode());
+	change_debug_mode(true);
+	ft_printf("DEBUG MODE: %b\n", debug_mode());
+	debug("DEBUG MODE: %b\n", debug_mode());
+}
+
+int	main(int argc, char const *argv[])
+{
+	// example_test_1(argc, argv);
+	// example_test_2();
+	example_test_3();
 	return (EXIT_SUCCESS);
 }
