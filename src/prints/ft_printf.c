@@ -106,3 +106,28 @@ int	ft_fprintf(int fd, const char *str, ...)
 	va_end(ap);
 	return (len);
 }
+
+int	debug(const char *str, ...)
+{
+	va_list	ap;
+	int		len;
+	int		i;
+
+	if(debug_mode() == false)
+		return (0);
+	if (!str)
+		return (-1);
+	i = 0;
+	len = 0;
+	va_start(ap, str);
+	while (str[i])
+	{
+		if (str[i] == FORMATTER)
+			len += printer(str[++i], &ap, STDOUT);
+		else
+			len += ft_printchar_fd(str[i], STDOUT);
+		i++;
+	}
+	va_end(ap);
+	return (len);
+}

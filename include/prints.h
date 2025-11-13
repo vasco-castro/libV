@@ -92,4 +92,6 @@ int	ft_printfile_fd(const char *filepath, int fd);
 int	ft_printf(const char *str, ...);
 int	ft_fprintf(int fd, const char *str, ...);
 
+int debug(const char *str, ...);
+
 #endif
