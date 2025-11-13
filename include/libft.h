@@ -31,5 +31,6 @@
 # include "point.h"
 # include "prints.h"
 # include "string.h"
+# include "debug.h"
 
 #endif
