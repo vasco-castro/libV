@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:03:08 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/16 17:35:48 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/16 20:26:20 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	arg0(int argc, char const *argv[])
 	free(str);
 }
 
-void	test_1(int argc, char const *argv[])
+void	test1(int argc, char const *argv[])
 {
 	bool	printed;
 	char	**tab;

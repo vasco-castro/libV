@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:17:33 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/16 17:35:53 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/16 20:28:35 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	test4(void)
 {
-	ft_printf("TEST 4");
+	ft_printf("%b\n", ft_isfile("tests/test4.c", ".c"));
+	ft_printf("%b\n", ft_isfile("tests/.c", ".c"));
+	ft_printf("%b\n", ft_isfile("test.c", ".c"));
+	ft_printf("%b\n", ft_isfile(".c", ".c"));
+	ft_printf("%b\n", ft_isfile("test", ".c"));
 }
