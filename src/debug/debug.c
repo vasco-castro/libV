@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:21:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/15 21:40:36 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/16 18:02:41 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ bool	is_debug_flag(const char *arg)
 {
 	if (!arg)
 		return (false);
-	return (ft_strcmp(arg, "--debug") == 0 || ft_strcmp(arg, "-d") == 0);
+	return (ft_strcmp(arg, "--debug") == 0
+		|| ft_strcmp(arg, "-d") == 0);
 }
 
-// TODO: Find if there's any arg in argv that is a debug flag
-// TODO: If there is a debug flag inside the args, activate debug mode
-// TODO: Delete the debug flag both from argc and argv
+/*
+ * Parses debug flag: "--debug" or "-d"
+ * and removes it from the argc and argv.
+ */
 void	parse_debug_mode(int *argc, char *argv[])
 {
 	int		i;
