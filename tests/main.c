@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 10:17:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/15 21:18:32 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/11/15 21:07:35 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/11/16 17:44:04 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "tests.h"
 
-# include "libft.h"
-
-bool	debug_mode(void);
-bool	change_debug_mode(bool set);
-bool	is_debug_flag(const char *arg);
-void	parse_debug_mode(int *argc, char *argv[]);
-
-#endif /* DEBUG_H */
+int	main(int argc, char *argv[])
+{
+	ft_printf("ORIGINAL ARGS(%d):\n%t\n", argc, argv);
+	parse_debug_mode(&argc, argv);
+	ft_printf("DEBUGUED ARGS(%d):\n%t\n", argc, argv);
+	ft_printf("DEBUF MODE: %b\n", debug_mode());
+	return (EXIT_SUCCESS);
+}

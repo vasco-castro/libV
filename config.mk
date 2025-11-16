@@ -1,6 +1,6 @@
 include colors.mk
 include targets.mk
-include test.mk
+include tests.mk
 
 COMPILE = cc -Wall -Wextra -Werror
 ARQUIVE = ar rcs

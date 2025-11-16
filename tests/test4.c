@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   test4.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 10:17:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/15 21:18:32 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/11/15 21:17:33 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/11/16 17:35:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "tests.h"
 
-# include "libft.h"
-
-bool	debug_mode(void);
-bool	change_debug_mode(bool set);
-bool	is_debug_flag(const char *arg);
-void	parse_debug_mode(int *argc, char *argv[]);
-
-#endif /* DEBUG_H */
+void	test4(void)
+{
+	ft_printf("TEST 4");
+}

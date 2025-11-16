@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:17:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/08/30 14:08:35 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/15 21:01:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ int	ft_printfile_fd(const char *filepath, int fd);
 int	ft_printf(const char *str, ...);
 int	ft_fprintf(int fd, const char *str, ...);
 
-int debug(const char *str, ...);
+int	debug(const char *str, ...);
 
 #endif

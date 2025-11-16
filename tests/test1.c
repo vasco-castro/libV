@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 15:05:56 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/03 20:54:28 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/11/15 21:03:08 by vsoares-          #+#    #+#             */
+/*   Updated: 2025/11/16 17:35:48 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "tests.h"
 
-void	arg1(int argc, char const *argv[])
+static void	arg1(int argc, char const *argv[])
 {
 	char	*str;
 
@@ -24,7 +24,7 @@ void	arg1(int argc, char const *argv[])
 	free(str);
 }
 
-void	arg0(int argc, char const *argv[])
+static void	arg0(int argc, char const *argv[])
 {
 	char	*str;
 
@@ -44,7 +44,7 @@ void	arg0(int argc, char const *argv[])
 	free(str);
 }
 
-void	example_test_1(int argc, char const *argv[])
+void	test_1(int argc, char const *argv[])
 {
 	bool	printed;
 	char	**tab;
@@ -67,37 +67,4 @@ void	example_test_1(int argc, char const *argv[])
 	ft_printf("TabCopy of size %d:\n%t", ft_tablen(tab2), tab);
 	ft_tabdel(tab2, ft_tablen(tab));
 	free(tab);
-}
-
-void	example_test_2(void)
-{
-	if (ft_issign('A'))
-		ft_printf("A\n");
-	if (ft_issign('4'))
-		ft_printf("4\n");
-	if (ft_issign('2'))
-		ft_printf("2\n");
-	if (ft_issign('-'))
-		ft_printf("-\n");
-	if (ft_issign('+'))
-		ft_printf("+\n");
-	if (ft_issign('='))
-		ft_printf("=\n");
-}
-
-void	example_test_3(void)
-{
-	ft_printf("DEBUG MODE: %b\n", debug_mode());
-	debug("DEBUG MODE: %b\n", debug_mode());
-	change_debug_mode(true);
-	ft_printf("DEBUG MODE: %b\n", debug_mode());
-	debug("DEBUG MODE: %b\n", debug_mode());
-}
-
-int	main(int argc, char const *argv[])
-{
-	// example_test_1(argc, argv);
-	// example_test_2();
-	example_test_3();
-	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:48:01 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/08/30 14:29:33 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/15 21:01:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int	debug(const char *str, ...)
 	int		len;
 	int		i;
 
-	if(debug_mode() == false)
+	if (debug_mode() == false)
 		return (0);
 	if (!str)
 		return (-1);
