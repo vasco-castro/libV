@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 09:17:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/16 20:29:47 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:28:39 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
  * @brief Checks if the given filename ends with the specified file extension
  * and has a valid name part (not just the extension).
  *
- * @param filename The name of the file to check (e.g., "map.ber" or "/path/to/map.ber").
+ * @param filename The name of the file to check
+ 	(e.g., "map.ber" or "/path/to/map.ber").
  * @param extension The file extension to validate (e.g., ".ber").
- * @return true if filename ends with extension and has a name part, false otherwise.
+ * @return true if filename ends with extension and has a name part,
+ 	false otherwise.
  */
 bool	ft_isfile(const char *filename, const char *extension)
 {
