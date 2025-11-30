@@ -2,7 +2,9 @@ include colors.mk
 include targets.mk
 include tests.mk
 
-COMPILE = cc -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+COMPILE = $(CC) $(CFLAGS)
 ARQUIVE = ar rcs
 REMOVE = rm -f
 

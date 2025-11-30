@@ -52,7 +52,6 @@ void	parse_debug_mode(int *argc, char *argv[])
 {
 	int		i;
 	int		debug_flag_index;
-	char	*debug_str;
 
 	i = 0;
 	debug_flag_index = -1;

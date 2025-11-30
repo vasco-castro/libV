@@ -16,7 +16,9 @@
  * @brief Checks if a character is a sign ('+' or '-').
  *
  * @param c The character to check.
- * @return 0 if the character is not a sign, 1 if it is '+', or -1 if it is '-'.
+ * @return 0 if isn't a sign,
+ * 		1 if it's '+' (positive sign),
+ * 		and -1 if it's '-' (nagative sign).
  */
 int	ft_issign(int c)
 {
