@@ -6,25 +6,13 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:03:08 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/16 20:26:20 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:28:17 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-static void	arg1(int argc, char const *argv[])
-{
-	char	*str;
-
-	ft_fprintf(STDERR, URED "You must input at least one value!" RESET"\n");
-	ft_printf("Input something on STDIN(%d) and press ENTER:\t" BICYAN, STDIN);
-	str = get_next_line(STDERR);
-	ft_printf(RESET "GNL from STDIN(%d) to STDOUT(%d):\t" BICYAN "%s" RESET,
-		STDIN, STDOUT, str);
-	free(str);
-}
-
-static void	arg0(int argc, char const *argv[])
+static void	teste1_0(char const *argv[])
 {
 	char	*str;
 
@@ -44,16 +32,28 @@ static void	arg0(int argc, char const *argv[])
 	free(str);
 }
 
+static void	teste1_1(void)
+{
+	char	*str;
+
+	ft_fprintf(STDERR, URED "You must input at least one value!" RESET"\n");
+	ft_printf("Input something on STDIN(%d) and press ENTER:\t" BICYAN, STDIN);
+	str = get_next_line(STDERR);
+	ft_printf(RESET "GNL from STDIN(%d) to STDOUT(%d):\t" BICYAN "%s" RESET,
+		STDIN, STDOUT, str);
+	free(str);
+}
+
 void	test1(int argc, char const *argv[])
 {
 	bool	printed;
 	char	**tab;
 	char	**tab2;
 
-	if (argc <= 1)
-		arg1(argc, argv);
+	if (argc > 1)
+		teste1_0(argv);
 	else
-		arg0(argc, argv);
+		teste1_1();
 	printed = false;
 	printed = ft_fprintf(STDERR, URED "Example of an error and a boolean on"
 			"STDERR(%d): %b" RESET"\n", printed, STDERR);
