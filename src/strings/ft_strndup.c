@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 17:04:25 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/02/23 17:52:42 by vsoares-         ###   ########.fr       */
+/*   Created: 2026/01/06 09:34:25 by vsoares-          #+#    #+#             */
+/*   Updated: 2026/01/06 09:34:25 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/string.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strndup(const char *src, size_t n)
 {
 	size_t	len;
 	char	*dst;
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *src)
 	if (!src)
 		return (NULL);
 	len = ft_strlen(src);
+	if (len > n)
+		len = n;
 	dst = malloc(len + 1);
 	if (!dst)
 		return (NULL);
