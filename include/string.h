@@ -42,5 +42,7 @@ size_t	ft_tknlen(const char *tkn, char c);
 size_t	ft_tkncount(const char *str, char c);
 
 int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strndup(const char *src, size_t n);
+size_t	ft_strnlen(const char *s, size_t n);
 
 #endif
