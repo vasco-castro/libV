@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:18:14 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/03 20:54:59 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/01/08 18:28:34 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stddef.h>
+# include <stdint.h>
 # include "memory.h"
 
 size_t	ft_strlen(const char *s);

@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:13:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/03/03 16:57:16 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/01/08 18:26:35 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ static char	*line_append(char *old_line, char *buf)
  */
 char	*get_next_line(int fd)
 {
-	static char	buf[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	buf[FD_MAX][BUFFER_SIZE + 1];
 	char		*line;
 
-	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE < 1)
+	if (fd < 0 || fd >= FD_MAX || BUFFER_SIZE < 1)
 		return (NULL);
 	line = NULL;
 	while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE) > 0)
