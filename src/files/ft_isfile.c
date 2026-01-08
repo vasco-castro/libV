@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/files.h"
 
 /**
  * @brief Checks if the given filename ends with the specified file extension

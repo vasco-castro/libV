@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/prints.h"
+#include "../../include/string.h"
 
 int	ft_printbase(long n, const char *base)
 {

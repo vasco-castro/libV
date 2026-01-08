@@ -13,8 +13,6 @@
 #ifndef POINT_H
 # define POINT_H
 
-# include "libft.h"
-
 typedef struct s_point
 {
 	int	x;

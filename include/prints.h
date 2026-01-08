@@ -13,7 +13,9 @@
 #ifndef PRINTS_H
 # define PRINTS_H
 
-# include "libft.h"
+# include <stdarg.h>
+# include <stdbool.h>
+# include <unistd.h>
 
 # ifndef FORMATTER
 #  define FORMATTER '%'

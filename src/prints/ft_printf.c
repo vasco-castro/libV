@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/prints.h"
+#include "../../include/debug.h"
 
 /**
  * @brief Dispatches printing based on format specifier.
@@ -68,7 +69,7 @@ int	ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == FORMATTER)
-			len += printer(str[++i], &ap, STDOUT);
+			len += printer(str[++i], &ap, STDOUT_FILENO);
 		else
 			len += ft_printchar(str[i]);
 		i++;
@@ -123,9 +124,9 @@ int	debug(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == FORMATTER)
-			len += printer(str[++i], &ap, STDOUT);
+			len += printer(str[++i], &ap, STDOUT_FILENO);
 		else
-			len += ft_printchar_fd(str[i], STDOUT);
+			len += ft_printchar_fd(str[i], STDOUT_FILENO);
 		i++;
 	}
 	va_end(ap);

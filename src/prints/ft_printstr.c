@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/prints.h"
+#include "../../include/string.h"
 
 int	ft_printstr(char *str)
 {

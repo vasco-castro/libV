@@ -13,15 +13,17 @@
 #ifndef FILES_H
 # define FILES_H
 
-# include "libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <stddef.h>
+# include <limits.h>
+# include <fcntl.h>
+# include "string.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
-
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
 
 char	*get_next_line(int fd);
 bool	ft_isfile(const char *filename, const char *extension);

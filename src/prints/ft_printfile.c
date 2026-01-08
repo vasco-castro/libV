@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/prints.h"
+#include "../../include/files.h"
 
 /**
  * @brief Prints the contents of a file to the standard output

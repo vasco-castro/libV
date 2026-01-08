@@ -13,7 +13,7 @@
 #ifndef CTYPE_H
 # define CTYPE_H
 
-# include "libft.h"
+# include <stdbool.h>
 
 bool	ft_isupper(int c);
 bool	ft_islower(int c);

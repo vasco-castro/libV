@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../include/files.h"
 
 /**
  * line_len - Calculates the length of a line up to a newline character.
@@ -86,10 +86,10 @@ static char	*line_append(char *old_line, char *buf)
  */
 char	*get_next_line(int fd)
 {
-	static char	buf[FOPEN_MAX][BUFFER_SIZE + 1];
+	static char	buf[OPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 
-	if (fd < 0 || fd >= FOPEN_MAX || BUFFER_SIZE < 1)
+	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE < 1)
 		return (NULL);
 	line = NULL;
 	while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE) > 0)

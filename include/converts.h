@@ -13,7 +13,7 @@
 #ifndef CONVERTS_H
 # define CONVERTS_H
 
-# include "libft.h"
+# include <stdlib.h>
 
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);

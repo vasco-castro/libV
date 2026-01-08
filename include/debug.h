@@ -13,7 +13,7 @@
 #ifndef DEBUG_H
 # define DEBUG_H
 
-# include "libft.h"
+# include <stdbool.h>
 
 bool	debug_mode(void);
 bool	change_debug_mode(bool set);

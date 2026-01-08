@@ -19,12 +19,12 @@ fclean: clean
 re: fclean all
 
 n:
-	@norminette | egrep -B1 'Error|Warning' >check_norm || true
+	@norminette | egrep -B1 'Error|Warning' > check_norm || true
 	@if [ -s check_norm ]; then \
-		echo "\e[1;31mNORMINETTE: KO\e[0m"; \
-		echo "\e[1;31m"; \
-		cat check_norm | egrep 'Error|Warning' | awk '{gsub(/\033\[94m/,""); gsub(/\033\[0m/,""); print}'; \
+		printf "$(RED)NORMINETTE: KO$(RESET)\n"; \
+		printf "$(RED)"; \
+		egrep 'Error|Warning' check_norm | awk '{gsub(/\033\[94m/,""); gsub(/\033\[0m/,""); print}'; \
 	else \
-		echo "\e[1;32mNORMINETTE: OK\e[0m"; \
+		printf "$(GREEN)NORMINETTE: OK$(RESET)\n"; \
 	fi
 	@rm check_norm

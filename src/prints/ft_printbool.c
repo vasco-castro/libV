@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/prints.h"
+#include "../../include/colors.h"
 
 int	ft_printbool(bool b)
 {

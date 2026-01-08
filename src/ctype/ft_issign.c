@@ -18,7 +18,7 @@
  * @param c The character to check.
  * @return 0 if isn't a sign,
  * 		1 if it's '+' (positive sign),
- * 		and -1 if it's '-' (nagative sign).
+ * 		and -1 if it's '-' (negative sign).
  */
 int	ft_issign(int c)
 {
