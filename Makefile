@@ -40,5 +40,5 @@ t: test
 	@./$<
 
 test: $(NAME) $(TEST_OBJ)
-	@$(CC) $(CFLAGS) $(NAME) $(TEST_OBJ) -o $@
+	@$(CC) $(CFLAGS) -I./tests $(NAME) $(TEST_OBJ) -o $@ -lft -L.
 	@printf "$(BLUE)Running test file.$(RESET)\n"

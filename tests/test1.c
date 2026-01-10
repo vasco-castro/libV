@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 21:03:08 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/12/04 16:28:17 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:24:41 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void	test1(int argc, char const *argv[])
 	ft_printf("Size of the tab: %d\n%t\n", sizeof(tab), tab);
 	tab2 = ft_tabcpy(tab);
 	ft_printf("TabCopy of size %d:\n%t", ft_tablen(tab2), tab);
-	ft_tabdel(tab2, ft_tablen(tab));
+	ft_tabfree(tab2);
 	free(tab);
 }
