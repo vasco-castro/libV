@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/09/07 11:25:14 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:32:23 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char	**fill_tab(const char *s, char c, char	**tab, size_t words)
 		wlen = ft_tknlen(s + j, c);
 		tab[i] = ft_substr(s + j, 0, wlen);
 		if (!tab[i])
-			return (ft_tabdel(tab, i));
+			return (ft_tabfree(tab), NULL);
 		j += wlen;
 		i++;
 	}

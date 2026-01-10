@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:18:14 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/01/08 18:28:34 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:54:37 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	**ft_split(const char *s, char c);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-void	*ft_tabdel(char **tab, size_t len);
 char	**ft_tabcpy(char **src);
 size_t	ft_tablen(char **tab);
 void	ft_tabfree(char **tab);

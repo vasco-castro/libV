@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:08:37 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/03 20:53:52 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:32:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * @src: The source array of strings (NULL-terminated).
  *
  * Return: A newly allocated copy of the array, or NULL on failure.
- * 	The caller is responsible for freeing the returned array with ft_tabdel().
+ * 	The caller is responsible for freeing the returned array with ft_tabfree().
  */
 char	**ft_tabcpy(char **src)
 {
