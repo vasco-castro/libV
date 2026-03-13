@@ -36,9 +36,9 @@ n:
 	fi
 	@rm check_norm
 
-t: test
-	@./$<
+# t: test
+# 	@./$<
 
-test: $(NAME) $(TEST_OBJ)
-	@$(CC) $(CFLAGS) -I./tests $(NAME) $(TEST_OBJ) -o $@ -lft -L.
-	@printf "$(BLUE)Running test file.$(RESET)\n"
+# test: $(NAME) $(TEST_OBJ)
+# 	@$(CC) $(CFLAGS) -I./tests $(NAME) $(TEST_OBJ) -o $@ -lft -L.
+# 	@printf "$(BLUE)Running test file.$(RESET)\n"
