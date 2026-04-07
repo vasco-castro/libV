@@ -1,6 +1,9 @@
+
 # Directories
-SRC_DIR := ./src/
-INC_DIR := ./include/
+SRC_DIR := src/
+INC_DIR := include/
+
+CFLAGS	+= -I$(INC_DIR)
 
 CVR_DIR := converts/
 CTY_DIR := ctype/

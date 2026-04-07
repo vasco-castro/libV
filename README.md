@@ -1,2 +1,127 @@
+*This project has been created as part of the 42 curriculum by vsoares-.*
+
 # libV
-My own custom and improved C library
+
+A personal, modular, and extended version of `libft`, built to centralize commonly used C utilities for 42 projects and general C development.
+
+---
+
+## Description
+
+`libV` is a static C library (`libft.a`) that groups reimplemented standard-like utilities and additional helper functions into a reusable toolkit.
+
+### Project goal
+
+The objective is to provide a reliable foundation for future projects by:
+- Rebuilding core libc-style behavior to strengthen low-level C knowledge
+- Offering consistent APIs across projects
+- Reducing duplicated code
+- Keeping functions organized by domain for readability and maintenance
+
+### Codebase overview
+
+The project is structured by modules, with headers in `include/` and implementations in `src/`:
+
+- `src/converts` — numeric/character conversion helpers  
+  Examples: `ft_atoi`, `ft_atol`, `ft_itoa`, `ft_tolower`, `ft_toupper`
+- `src/ctype` — character classification and checks  
+  Examples: `ft_isalpha`, `ft_isdigit`, `ft_isspace`, `ft_isxdigit`, `ft_issign`
+- `src/memory` — memory operations  
+  Examples: `ft_memset`, `ft_memcpy`, `ft_memmove`, `ft_memcmp`, `ft_calloc`
+- `src/strings` — string and token utilities  
+  Examples: `ft_strlen`, `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_split`, `ft_strtrim`
+- `src/lists` — singly linked list utilities  
+  Examples: `ft_lstnew`, `ft_lstadd_back`, `ft_lstiter`, `ft_lstmap`, `ft_lstclear`
+- `src/prints` — formatted/output helpers  
+  Examples: `ft_printf`, `ft_printchar`, `ft_printstr`, `ft_printptr`, `ft_printbase`
+- `src/files` — file-related helpers  
+  Examples: `get_next_line`, `ft_isfile`
+- `src/debug` — debug support helper(s)
+
+Main umbrella header:
+- `include/libft.h` (includes all module headers)
+
+Build configuration:
+- `Makefile`
+- `mk/config.mk`
+- `mk/sources.mk`
+
+---
+
+## Instructions
+
+### 1) Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd libV
+```
+
+### 2) Build the library
+
+```bash
+make
+```
+
+This produces:
+
+- `libft.a` (static library archive)
+
+### 3) Useful Make targets
+
+- `make` → build `libft.a`
+- `make clean` → remove object/dependency files
+- `make fclean` → `clean` + remove `libft.a`
+- `make re` → full rebuild (`fclean` then `make`)
+- `make n` → run Norminette check summary
+
+### 4) Use in another C project
+
+Include headers (at minimum):
+
+```c
+#include "libft.h"
+```
+
+Compile and link (example):
+
+```bash
+cc -Wall -Wextra -Werror your_file.c -I./include -L. -lft -o your_program
+```
+
+> If integrating from another project path, adjust `-I` and `-L` accordingly.
+
+---
+
+## Resources
+
+### Classic references
+
+- Linux man pages (`man 3 <function>`)  
+  Useful for expected behavior of libc-like functions.
+- The Open Group Base Specifications (POSIX)  
+  https://pubs.opengroup.org/
+- cppreference C library pages  
+  https://en.cppreference.com/w/c/header
+- 42 Norm (Norminette) documentation (intra / official resources)
+- 42 project subjects:
+  - `libft`
+  - `get_next_line`
+  - `ft_printf`
+
+### How AI was used
+
+AI assistance was used as a support tool for:
+- README/documentation drafting and structure improvements
+- Wording clarity and section organization
+- Reviewing command examples for build/integration instructions
+
+AI was **not** used to replace understanding of project logic. Function design, implementation decisions, debugging, and validation remain grounded in project requirements and manual developer work.
+
+---
+
+## Notes
+
+- Language: C
+- Output artifact: static library (`libft.a`)
+- Intended usage: reusable base library for 42 and other C projects

@@ -1,17 +1,19 @@
-include targets.mk
 
-CC ?= cc
-CFLAGS := -Wall -Wextra -Werror
-CFLAGS +=  -I./include
+# C compiler & C flags
+CC		?= cc
+CFLAGS	:= -Wall -Wextra -Werror
 
-AR := ar
-ARFLAGS := rcs
-RM	:= rm -f
+AR		:= ar
+ARFLAGS	:= rcs
+RM		:= rm -f
+
+-include mk/sources.mk
 
 .PHONY: all clean fclean re t n
 
 .DEFAULT_GOAL := all
 
+# Colors
 BLACK	:= \e[1;30m
 RED		:= \e[1;31m
 GREEN	:= \e[1;32m

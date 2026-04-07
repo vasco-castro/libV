@@ -1,4 +1,4 @@
-include config.mk
+-include mk/config.mk
 
 NAME := libft.a
 
