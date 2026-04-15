@@ -17,7 +17,7 @@
  * @param nb The number to evaluate.
  * @return The size of the number including sign if negative.
  */
-static int	nbrsize(long nb)
+static size_t	nbrsize(long nb)
 {
 	size_t	count;
 
@@ -26,7 +26,7 @@ static int	nbrsize(long nb)
 		return (1);
 	if (nb < 0)
 	{
-		nb *= -1;
+		nb = -nb;
 		count++;
 	}
 	while (nb > 0)
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	nlen = nbrsize(nb);
-	number = ft_calloc(nlen + 1, 1);
+	number = ft_calloc(nlen + 1, sizeof(char));
 	if (!number)
 		return (NULL);
 	if (nb == 0)

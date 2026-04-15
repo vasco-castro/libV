@@ -30,7 +30,9 @@ long	ft_atol(const char *str)
 
 	i = 0;
 	sign = 1;
-	nb = 0;
+	nb = 0L;
+	if (!str)
+		return (0L);
 	while (ft_isspace(str[i]))
 		i++;
 	if (ft_issign(str[i]) != 0)

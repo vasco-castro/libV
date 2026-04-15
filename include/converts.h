@@ -14,8 +14,10 @@
 # define CONVERTS_H
 
 # include <stdlib.h>
+# include <stdbool.h>
 
 int		ft_atoi(const char *str);
+int		ft_safe_atoi(const char *str, bool *overflowed);
 char	*ft_itoa(int n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
