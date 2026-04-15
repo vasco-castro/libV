@@ -15,7 +15,7 @@ STR_DIR := strings/
 DBG_DIR := debug/
 
 # Source files
-CVR_FTS := ft_atoi ft_itoa ft_tolower ft_toupper
+CVR_FTS := ft_atoi ft_atol ft_itoa ft_tolower ft_toupper
 CTY_FTS := ft_islower ft_isupper ft_isalpha ft_isdigit ft_isxdigit ft_isalnum ft_ispunct \
 			ft_isgraph ft_isprint ft_isblank ft_isspace ft_iscntrl ft_isascii ft_issign
 FLS_FTS := get_next_line ft_isfile

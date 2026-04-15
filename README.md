@@ -53,8 +53,8 @@ Build configuration:
 ### 1) Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd libV
+git clone git@github.com:vasco-castro/libV.git libft
+cd libft
 ```
 
 ### 2) Build the library
@@ -73,7 +73,6 @@ This produces:
 - `make clean` → remove object/dependency files
 - `make fclean` → `clean` + remove `libft.a`
 - `make re` → full rebuild (`fclean` then `make`)
-- `make n` → run Norminette check summary
 
 ### 4) Use in another C project
 
