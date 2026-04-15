@@ -18,6 +18,6 @@
 bool	debug_mode(void);
 bool	change_debug_mode(bool set);
 bool	is_debug_flag(const char *arg);
-void	parse_debug_mode(int *argc, char *argv[]);
+bool	parse_debug_mode(int *argc, char *argv[]);
 
 #endif /* DEBUG_H */

@@ -36,7 +36,8 @@ The project is structured by modules, with headers in `include/` and implementat
   Examples: `ft_printf`, `ft_printchar`, `ft_printstr`, `ft_printptr`, `ft_printbase`
 - `src/files` — file-related helpers  
   Examples: `get_next_line`, `ft_isfile`
-- `src/debug` — debug support helper(s)
+- `src/debug` — runtime debug mode helpers and CLI debug-flag parsing
+  Examples: `debug_mode`, `change_debug_mode`, `is_debug_flag`, `parse_debug_mode`
 
 Main umbrella header:
 - `include/libft.h` (includes all module headers)
@@ -89,6 +90,37 @@ cc -Wall -Wextra -Werror your_file.c -I./include -L. -lft -o your_program
 ```
 
 > If integrating from another project path, adjust `-I` and `-L` accordingly.
+
+### 5) Debug mode helpers
+
+`libV` includes a small runtime debug-state helper API in `src/debug/debug.c` and `include/debug.h`.
+
+Available helpers:
+
+- `bool debug_mode(void);`  
+  Returns the current debug state.
+- `bool change_debug_mode(bool set);`  
+  If `set == true`, toggles the internal debug state. Returns current state.
+- `bool is_debug_flag(const char *arg);`  
+  Returns `true` for `--debug` or `-d`.
+- `bool parse_debug_mode(int *argc, char *argv[]);`  
+  Scans arguments for debug flags (`--debug` or `-d`). If found, removes the flag from `argv`, decrements `argc`, and enables debug mode. Returns `true` if a debug flag was found and processed, `false` otherwise.
+
+Typical usage in `main`:
+
+```c
+int	main(int argc, char *argv[])
+{
+	parse_debug_mode(&argc, argv);
+	if (debug_mode())
+		ft_printf("Debug mode enabled\n");
+	/* ...rest of program... */
+}
+```
+
+Notes:
+- The debug state is kept internally through a static variable.
+- `parse_debug_mode` processes the first debug flag occurrence it encounters and returns immediately, making it safe for programs that expect at most one debug flag.
 
 ---
 

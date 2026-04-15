@@ -22,7 +22,8 @@ bool	debug_mode(void)
 }
 
 /*
- * This function toggles the debug mode.
+ * This function toggles the debug mode when set is true.
+ * Returns the current debug state.
  */
 bool	change_debug_mode(bool set)
 {
@@ -46,32 +47,33 @@ bool	is_debug_flag(const char *arg)
 
 /*
  * Parses debug flag: "--debug" or "-d"
- * and removes it from the argc and argv.
+ * Removes the flag from argc and argv, and enables debug mode if found.
+ * Returns true if a debug flag was found and processed, false otherwise.
  */
-void	parse_debug_mode(int *argc, char *argv[])
+bool	parse_debug_mode(int *argc, char *argv[])
 {
 	int		i;
-	int		debug_flag_index;
+	int		j;
 
-	i = 0;
-	debug_flag_index = -1;
-	while (*argc > i++)
+	if (!argc || !argv || *argc <= 0)
+		return (false);
+	i = 1;
+	while (i < *argc)
 	{
 		if (is_debug_flag(argv[i]))
 		{
 			change_debug_mode(true);
-			debug_flag_index = i;
-			break ;
+			j = i;
+			while (j < *argc)
+			{
+				argv[j] = argv[j + 1];
+				j++;
+			}
+			(*argc)--;
+			argv[*argc] = NULL;
+			return (true);
 		}
+		i++;
 	}
-	if (debug_flag_index != -1)
-	{
-		while (*argc > i && debug_flag_index != -1)
-		{
-			argv[i] = argv[i + 1];
-			i++;
-		}
-		(*argc)--;
-		argv[i] = NULL;
-	}
+	return (false);
 }

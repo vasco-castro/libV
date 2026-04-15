@@ -55,3 +55,60 @@ int	ft_printtab_fd(char **tab, int fd)
 		count += ft_println_fd(tab[i++], fd);
 	return (count);
 }
+
+/**
+ * @brief Prints each string from an array with a custom delim.
+ *
+ * @param tab Array of strings to print (must be NULL-terminated)
+ * @param delim String to print between elements
+ * @return Total number of characters printed, or -1 if tab is NULL
+ */
+int	ft_printtab_delim(char *tab[], char *delim)
+{
+	int	i;
+	int	count;
+
+	if (!tab)
+		return (-1);
+	if (!delim)
+		return (ft_printtab(tab));
+	i = 0;
+	count = 0;
+	while (tab[i])
+	{
+		count += ft_printstr(tab[i++]);
+		if (tab[i])
+			count += ft_printstr(delim);
+	}
+	return (count);
+}
+
+/**
+ * @brief Prints each string from an array with a custom delim to file
+ *        descriptor.
+ *
+ * @param tab Array of strings to print (must be NULL-terminated)
+ * @param delim String to print between elements
+ * @param fd File descriptor to print to
+ * @return Total number of characters printed, or -1 if tab is NULL or
+ *         fd is invalid
+ */
+int	ft_printtab_delim_fd(char *tab[], char *delim, int fd)
+{
+	int	i;
+	int	count;
+
+	if (!tab || fd < 0)
+		return (-1);
+	if (!delim)
+		return (ft_printtab_fd(tab, fd));
+	i = 0;
+	count = 0;
+	while (tab[i])
+	{
+		count += ft_printstr_fd(tab[i++], fd);
+		if (tab[i])
+			count += ft_printstr_fd(delim, fd);
+	}
+	return (count);
+}
