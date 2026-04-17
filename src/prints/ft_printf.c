@@ -85,7 +85,7 @@ int	ft_printf(const char *str, ...)
  * @param ... Variable arguments to format and print.
  * @return the number of characters printed, or -1 on error.
  */
-int	ft_fprintf(int fd, const char *str, ...)
+int	ft_dprintf(int fd, const char *str, ...)
 {
 	va_list	ap;
 	int		len;
@@ -108,27 +108,42 @@ int	ft_fprintf(int fd, const char *str, ...)
 	return (len);
 }
 
-int	debug(const char *str, ...)
+int	ft_vprintf(const char *str, va_list ap)
 {
-	va_list	ap;
 	int		len;
 	int		i;
 
-	if (debug_mode() == false)
-		return (0);
 	if (!str)
 		return (-1);
 	i = 0;
 	len = 0;
-	va_start(ap, str);
 	while (str[i])
 	{
 		if (str[i] == FORMATTER)
 			len += printer(str[++i], &ap, STDOUT_FILENO);
 		else
-			len += ft_printchar_fd(str[i], STDOUT_FILENO);
+			len += ft_printchar(str[i]);
 		i++;
 	}
-	va_end(ap);
+	return (len);
+}
+
+int	ft_vdprintf(int fd, const char *str, va_list ap)
+{
+	int		len;
+	int		i;
+
+	if (!str)
+		return (-1);
+	i = 0;
+	len = 0;
+	while (str[i])
+	{
+		if (str[i] == FORMATTER)
+			len += printer(str[++i], &ap, fd);
+		else
+			len += ft_printchar_fd(str[i], fd);
+		i++;
+	}
 	return (len);
 }

@@ -77,3 +77,18 @@ bool	parse_debug_mode(int *argc, char *argv[])
 	}
 	return (false);
 }
+
+int	debug(const char *str, ...)
+{
+	va_list	ap;
+	int		len;
+
+	if (debug_mode() == false)
+		return (0);
+	if (!str)
+		return (-1);
+	va_start(ap, str);
+	len = ft_vdprintf(STDERR_FILENO, str, ap);
+	va_end(ap);
+	return (len);
+}

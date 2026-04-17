@@ -14,10 +14,13 @@
 # define DEBUG_H
 
 # include <stdbool.h>
+# include <stdarg.h>
 
 bool	debug_mode(void);
 bool	change_debug_mode(bool set);
 bool	is_debug_flag(const char *arg);
 bool	parse_debug_mode(int *argc, char *argv[]);
+
+int		debug(const char *str, ...);
 
 #endif /* DEBUG_H */

@@ -94,8 +94,9 @@ int	ft_printfile(const char *filepath);
 int	ft_printfile_fd(const char *filepath, int fd);
 
 int	ft_printf(const char *str, ...);
-int	ft_fprintf(int fd, const char *str, ...);
+int	ft_dprintf(int fd, const char *str, ...);
 
-int	debug(const char *str, ...);
+int	ft_vprintf(const char *str, va_list ap);
+int	ft_vdprintf(int fd, const char *str, va_list ap);
 
 #endif
