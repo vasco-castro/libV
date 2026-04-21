@@ -13,8 +13,12 @@
 #include "../../include/ctype.h"
 
 /**
- * All alphabet characters.
+ * @brief Checks if a character is alphabetic.
+ *
  * Combination of ft_isupper + ft_islower.
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is an uppercase or lowercase letter, false otherwise.
  */
 bool	ft_isalpha(int c)
 {

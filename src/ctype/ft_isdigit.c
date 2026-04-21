@@ -13,7 +13,12 @@
 #include "../../include/ctype.h"
 
 /**
- * All digits characters: 0-9
+ * @brief Checks if a character is a decimal digit.
+ *
+ * Digit characters are '0' through '9' (ASCII 48-57).
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a digit character ('0'-'9'), false otherwise.
  */
 bool	ft_isdigit(int c)
 {

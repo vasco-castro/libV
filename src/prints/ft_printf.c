@@ -108,6 +108,13 @@ int	ft_dprintf(int fd, const char *str, ...)
 	return (len);
 }
 
+/**
+ * @brief Custom vprintf implementation that prints to stdout using a va_list.
+ *
+ * @param str Format string containing conversion specifiers.
+ * @param ap  A va_list of arguments to format and print.
+ * @return The number of characters printed, or -1 if str is NULL.
+ */
 int	ft_vprintf(const char *str, va_list ap)
 {
 	int		len;
@@ -128,6 +135,15 @@ int	ft_vprintf(const char *str, va_list ap)
 	return (len);
 }
 
+/**
+ * @brief Custom vdprintf implementation that prints to a file descriptor
+ *        using a va_list.
+ *
+ * @param fd  The file descriptor to print to.
+ * @param str Format string containing conversion specifiers.
+ * @param ap  A va_list of arguments to format and print.
+ * @return The number of characters printed, or -1 if str is NULL.
+ */
 int	ft_vdprintf(int fd, const char *str, va_list ap)
 {
 	int		len;

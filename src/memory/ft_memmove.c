@@ -12,6 +12,18 @@
 
 #include "../../include/memory.h"
 
+/**
+ * @brief Copies len bytes from memory area src to memory area dst,
+ *        handling overlapping memory regions correctly.
+ *
+ * Unlike ft_memcpy, ft_memmove safely handles the case where src and dst
+ * overlap by copying from the end when dst > src.
+ *
+ * @param dst Pointer to the destination memory area.
+ * @param src Pointer to the source memory area.
+ * @param len Number of bytes to copy.
+ * @return A pointer to dst. Returns NULL if both dst and src are NULL.
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*tmp_dst;

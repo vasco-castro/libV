@@ -12,6 +12,15 @@
 
 #include "../../include/prints.h"
 
+/**
+ * @brief Prints a pointer address to stdout in hexadecimal format.
+ *
+ * Prints "(nil)" if ptr is NULL, otherwise prints "0x" followed by the
+ * hexadecimal representation of the pointer's address.
+ *
+ * @param ptr The pointer to print.
+ * @return The number of characters printed.
+ */
 int	ft_printptr(void *ptr)
 {
 	int				counter;
@@ -25,6 +34,16 @@ int	ft_printptr(void *ptr)
 	return (counter);
 }
 
+/**
+ * @brief Prints a pointer address to a file descriptor in hexadecimal format.
+ *
+ * Prints "(nil)" if ptr is NULL, otherwise prints "0x" followed by the
+ * hexadecimal representation of the pointer's address.
+ *
+ * @param ptr The pointer to print.
+ * @param fd The file descriptor to print to.
+ * @return The number of characters printed.
+ */
 int	ft_printptr_fd(void *ptr, int fd)
 {
 	int				counter;

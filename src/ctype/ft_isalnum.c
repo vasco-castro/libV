@@ -13,8 +13,12 @@
 #include "../../include/ctype.h"
 
 /**
- * All alphabet and digit characters.
+ * @brief Checks if a character is alphanumeric.
+ *
  * Combination of ft_isalpha + ft_isdigit.
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is an alphabetic or digit character, false otherwise.
  */
 bool	ft_isalnum(int c)
 {

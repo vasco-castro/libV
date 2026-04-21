@@ -13,8 +13,13 @@
 #include "../../include/ctype.h"
 
 /**
- * All punctuation characters.
- * ex:'[{()}]/?`~!@#$%^&*-+=_\|;:",<.>'
+ * @brief Checks if a character is a punctuation character.
+ *
+ * Punctuation characters are printable non-alphanumeric characters,
+ * e.g.: '[{()}]/?`~!@#$%^&*-+=_\|;:",<.>'
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a punctuation character, false otherwise.
  */
 bool	ft_ispunct(int c)
 {

@@ -13,10 +13,10 @@
 #include "../../include/files.h"
 
 /**
- * line_len - Calculates the length of a line up to a newline character.
- * @str: The string to measure.
+ * @brief Calculates the length of a line up to a newline character.
  *
- * Returns the length of the line or 0 if the string is NULL.
+ * @param str The string to measure.
+ * @return The length of the line (not including the newline), or 0 if str is NULL.
  */
 static int	line_len(char *str)
 {
@@ -31,11 +31,12 @@ static int	line_len(char *str)
 }
 
 /**
- * bufshift - Shifts the buffer content after processing a line.
- * @buf: The buffer to shift.
- * @size: The number of characters to shift.
+ * @brief Shifts the buffer content after processing a line.
  *
  * Moves the remaining content in the buffer to the start and zeroes the rest.
+ *
+ * @param buf  The buffer to shift.
+ * @param size The number of characters to skip (shift offset).
  */
 static void	bufshift(char *buf, size_t size)
 {
@@ -49,11 +50,15 @@ static void	bufshift(char *buf, size_t size)
 }
 
 /**
- * line_append - Appends buffer content to the current line.
- * @old_line: The existing line to append to.
- * @buf: The buffer containing new content.
+ * @brief Appends buffer content to the current line being built.
  *
- * Returns a new line with the buffer content appended. Frees old_line.
+ * Allocates a new string combining old_line and the buffer content up to
+ * and including the first newline. Frees old_line after appending.
+ *
+ * @param old_line The existing line to append to (may be NULL).
+ * @param buf      The buffer containing new content to append.
+ * @return A newly allocated string with the appended content,
+ *         or NULL if allocation fails.
  */
 static char	*line_append(char *old_line, char *buf)
 {
@@ -79,10 +84,14 @@ static char	*line_append(char *old_line, char *buf)
 }
 
 /**
- * get_next_line - Reads the next line from a file descriptor.
- * @fd: The file descriptor to read from.
+ * @brief Reads the next line from a file descriptor.
  *
- * Returns the next line from the file descriptor or NULL on error or EOF.
+ * Reads from fd one line at a time, preserving the trailing newline character
+ * if present. Maintains a per-fd static buffer between calls.
+ *
+ * @param fd The file descriptor to read from.
+ * @return A pointer to the next line (including the newline if present),
+ *         or NULL on error, invalid fd, or end of file with no data read.
  */
 char	*get_next_line(int fd)
 {

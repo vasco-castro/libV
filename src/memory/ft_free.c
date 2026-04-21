@@ -12,6 +12,13 @@
 
 #include "../../include/memory.h"
 
+/**
+ * @brief Frees a pointer if it is not NULL.
+ *
+ * Wrapper around free() that safely ignores NULL pointers.
+ *
+ * @param ptr Pointer to the memory to free. If NULL, no action is taken.
+ */
 void	ft_free(void *ptr)
 {
 	if (ptr)

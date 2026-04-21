@@ -13,10 +13,16 @@
 #include "../../include/string.h"
 
 /**
- * Returns a allocated sub-string:
- * Starting at the position passed as 'start';
- * Inside the string passed as 's';
- * With the total length passed as 'len';
+ * @brief Extracts a substring from a string.
+ *
+ * Allocates and returns a new string that is a substring of s, starting
+ * at index start and of at most len characters.
+ *
+ * @param s The source string to extract from.
+ * @param start The starting index in s for the substring.
+ * @param len The maximum length of the substring.
+ * @return A pointer to the newly allocated substring, an empty string if
+ *         start is beyond the end of s, or NULL if allocation fails.
  */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

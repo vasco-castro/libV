@@ -13,6 +13,12 @@
 #include "../../include/prints.h"
 #include "../../include/colors.h"
 
+/**
+ * @brief Prints a boolean value as "true" or "false" (in blue) to stdout.
+ *
+ * @param b The boolean value to print.
+ * @return The number of characters printed.
+ */
 int	ft_printbool(bool b)
 {
 	if (b)
@@ -21,6 +27,13 @@ int	ft_printbool(bool b)
 		return (ft_printstr(BLUE "false" RESET));
 }
 
+/**
+ * @brief Prints a boolean value as "true" or "false" (in blue) to a file descriptor.
+ *
+ * @param b The boolean value to print.
+ * @param fd The file descriptor to print to.
+ * @return The number of characters printed.
+ */
 int	ft_printbool_fd(bool b, int fd)
 {
 	if (b)

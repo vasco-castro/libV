@@ -12,6 +12,15 @@
 
 #include "../../include/string.h"
 
+/**
+ * @brief Applies a function to each character of a string, passing the index.
+ *
+ * Iterates over each character of s and calls f with the character's index
+ * and a pointer to the character, allowing in-place modification.
+ *
+ * @param s The string to iterate over.
+ * @param f Function to apply to each character, receiving its index and address.
+ */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
