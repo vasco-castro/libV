@@ -25,6 +25,7 @@
  * @return The length of the string it tried to create:
  *         initial length of `dst` + length of `src`.
  *         If the return value is >= size, truncation occurred.
+ *         Returns the length of `src` without writing if `dst` is `NULL`.
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -32,8 +33,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_len;
 	size_t	copy_len;
 
-	dst_len = ft_strnlen(dst, size);
+	if (!src)
+		src = "";
 	src_len = ft_strlen(src);
+	if (!dst)
+		return (src_len);
+	dst_len = ft_strnlen(dst, size);
 	if (dst_len == size)
 		return (size + src_len);
 	copy_len = size - dst_len - 1;

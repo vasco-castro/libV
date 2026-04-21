@@ -14,12 +14,15 @@
 
 /**
  * Counts tokens inside a string, which the limiter is char c.
+ * Returns 0 if str is NULL.
  */
 size_t	ft_tkncount(const char *str, char c)
 {
 	size_t	i;
 	size_t	tokens;
 
+	if (!str)
+		return (0);
 	i = 0;
 	tokens = 0;
 	while (str[i])

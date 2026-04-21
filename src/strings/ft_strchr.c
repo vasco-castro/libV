@@ -23,11 +23,14 @@
  * @param s Pointer to the null-terminated string to be searched.
  * @param c Character to locate (passed as an `int`, converted to `char`).
  * @return Pointer to the first occurrence of `c` in `s`, or `NULL` if not found.
+ *         Returns `NULL` if `s` is `NULL`.
  */
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
