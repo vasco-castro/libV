@@ -12,6 +12,17 @@
 
 #include "../../include/string.h"
 
+/**
+ * @brief Applies a function to each character of a string and returns a new string.
+ *
+ * Creates a new allocated string by applying f to each character of s,
+ * passing the character's index and value.
+ *
+ * @param s The source string to map over.
+ * @param f Function to apply to each character, receiving its index and value.
+ * @return A newly allocated string with the mapped characters,
+ *         or NULL if s or f is NULL, or if allocation fails.
+ */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char	*str;

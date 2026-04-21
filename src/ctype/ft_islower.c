@@ -13,7 +13,12 @@
 #include "../../include/ctype.h"
 
 /**
- * All lowercase characters: a-z
+ * @brief Checks if a character is a lowercase letter.
+ *
+ * Lowercase letters are 'a' through 'z' (ASCII 97-122).
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a lowercase letter ('a'-'z'), false otherwise.
  */
 bool	ft_islower(int c)
 {

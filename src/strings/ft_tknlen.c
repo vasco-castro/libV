@@ -13,8 +13,10 @@
 #include "../../include/string.h"
 
 /**
- * Calculates the length of a token in a string, stopping at the first occurrence
- * of a specified delimiter character.
+ * @brief Calculates the length of a token in a string up to a delimiter.
+ *
+ * Counts characters from the start of tkn until the delimiter c or the
+ * end of the string is reached.
  *
  * @param tkn The input string to evaluate.
  * @param c   The delimiter character that marks the end of the token.

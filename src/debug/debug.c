@@ -13,17 +13,24 @@
 #include "../../include/libft.h"
 #include <stdbool.h>
 
-/*
- * This function returns true if debug mode is ON, and false otherwise.
+/**
+ * @brief Returns the current debug mode state.
+ *
+ * @return true if debug mode is ON, false otherwise.
  */
 bool	debug_mode(void)
 {
 	return (change_debug_mode(false));
 }
 
-/*
- * This function toggles the debug mode when set is true.
- * Returns the current debug state.
+/**
+ * @brief Toggles or queries the debug mode state.
+ *
+ * If set is true, the internal debug state is toggled. The function always
+ * returns the current state after the optional toggle.
+ *
+ * @param set If true, toggles the debug state; if false, only queries it.
+ * @return The current debug mode state after the optional toggle.
  */
 bool	change_debug_mode(bool set)
 {
@@ -34,8 +41,13 @@ bool	change_debug_mode(bool set)
 	return (debug);
 }
 
-/*
- * This function checks if the given argument is a debug flag.
+/**
+ * @brief Checks if the given argument is a debug flag.
+ *
+ * Recognized debug flags are "--debug" and "-d".
+ *
+ * @param arg The command-line argument string to check.
+ * @return true if arg is "--debug" or "-d", false otherwise.
  */
 bool	is_debug_flag(const char *arg)
 {
@@ -45,10 +57,15 @@ bool	is_debug_flag(const char *arg)
 		|| ft_strcmp(arg, "-d") == 0);
 }
 
-/*
- * Parses debug flag: "--debug" or "-d"
- * Removes the flag from argc and argv, and enables debug mode if found.
- * Returns true if a debug flag was found and processed, false otherwise.
+/**
+ * @brief Parses and removes debug flags from the argument list.
+ *
+ * Scans argv for "--debug" or "-d". If found, removes the flag from argv,
+ * decrements *argc, and enables debug mode.
+ *
+ * @param argc Pointer to the argument count (modified if a flag is found).
+ * @param argv The argument array (modified in place if a flag is found).
+ * @return true if a debug flag was found and processed, false otherwise.
  */
 bool	parse_debug_mode(int *argc, char *argv[])
 {
@@ -78,6 +95,17 @@ bool	parse_debug_mode(int *argc, char *argv[])
 	return (false);
 }
 
+/**
+ * @brief Prints a formatted debug message to stderr, if debug mode is enabled.
+ *
+ * If debug mode is off, does nothing and returns 0. If str is NULL, returns -1.
+ * Supports the same format specifiers as ft_printf.
+ *
+ * @param str Format string containing conversion specifiers.
+ * @param ... Variable arguments to format and print.
+ * @return The number of characters printed, 0 if debug mode is off,
+ *         or -1 if str is NULL.
+ */
 int	debug(const char *str, ...)
 {
 	va_list	ap;

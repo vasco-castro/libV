@@ -13,8 +13,12 @@
 #include "../../include/ctype.h"
 
 /**
- * All hexadecimal characters:
- * 0-9 (ft_isdigit), A-F, a-f
+ * @brief Checks if a character is a hexadecimal digit.
+ *
+ * Hexadecimal digits are: 0-9 (ft_isdigit), A-F, and a-f.
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a hexadecimal digit character, false otherwise.
  */
 bool	ft_isxdigit(int c)
 {

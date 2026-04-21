@@ -13,7 +13,12 @@
 #include "../../include/ctype.h"
 
 /**
- * All uppercase characters: A-Z
+ * @brief Checks if a character is an uppercase letter.
+ *
+ * Uppercase letters are 'A' through 'Z' (ASCII 65-90).
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is an uppercase letter ('A'-'Z'), false otherwise.
  */
 bool	ft_isupper(int c)
 {

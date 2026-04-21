@@ -12,6 +12,14 @@
 
 #include "../../include/string.h"
 
+/**
+ * @brief Frees a NULL-terminated array of strings and the array itself.
+ *
+ * Iterates over each string in the array, frees it, then frees the array.
+ * Does nothing if tab is NULL.
+ *
+ * @param tab The NULL-terminated array of strings to free.
+ */
 void	ft_tabfree(char **tab)
 {
 	size_t	len;

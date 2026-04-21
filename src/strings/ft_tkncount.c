@@ -13,7 +13,14 @@
 #include "../../include/string.h"
 
 /**
- * Counts tokens inside a string, which the limiter is char c.
+ * @brief Counts the number of tokens in a string separated by a delimiter.
+ *
+ * A token is a non-empty sequence of characters not equal to c.
+ * Consecutive delimiters are treated as a single separator.
+ *
+ * @param str The string to count tokens in.
+ * @param c The delimiter character separating tokens.
+ * @return The number of tokens found in str.
  */
 size_t	ft_tkncount(const char *str, char c)
 {

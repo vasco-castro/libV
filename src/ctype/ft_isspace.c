@@ -13,13 +13,18 @@
 #include "../../include/ctype.h"
 
 /**
- * All white-space characters
- * 09	HT		'\t' (horizontal tab)
- * 10	LF		'\n' (new line)
- * 11	VT		'\v' (vertical tab)
- * 12	FF		'\f' (form feed)
- * 13	CR		'\r' (carriage ret)
- * 32	SPACE	' ' (space)
+ * @brief Checks if a character is a white-space character.
+ *
+ * White-space characters are:
+ * - 9  HT  '\t' (horizontal tab)
+ * - 10 LF  '\n' (new line)
+ * - 11 VT  '\v' (vertical tab)
+ * - 12 FF  '\f' (form feed)
+ * - 13 CR  '\r' (carriage return)
+ * - 32     ' '  (space)
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a white-space character, false otherwise.
  */
 bool	ft_isspace(int c)
 {

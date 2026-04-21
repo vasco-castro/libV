@@ -13,6 +13,16 @@
 #include "../../include/prints.h"
 #include "../../include/string.h"
 
+/**
+ * @brief Prints a signed long integer in the given base to stdout.
+ *
+ * Recursively prints each digit of n using the characters in base.
+ * Prints a '-' sign for negative numbers.
+ *
+ * @param n The signed long integer to print.
+ * @param base A string representing the base characters (e.g., "0123456789").
+ * @return The number of characters printed.
+ */
 int	ft_printbase(long n, const char *base)
 {
 	static unsigned short	base_size;
@@ -27,6 +37,15 @@ int	ft_printbase(long n, const char *base)
 			+ ft_printbase(n % base_size, base));
 }
 
+/**
+ * @brief Prints an unsigned long integer in the given base to stdout.
+ *
+ * Recursively prints each digit of n using the characters in base.
+ *
+ * @param n The unsigned long integer to print.
+ * @param base A string representing the base characters (e.g., "0123456789abcdef").
+ * @return The number of characters printed.
+ */
 int	ft_printubase(unsigned long n, const char *base)
 {
 	static unsigned short	base_size;
@@ -39,6 +58,17 @@ int	ft_printubase(unsigned long n, const char *base)
 			+ ft_printubase(n % base_size, base));
 }
 
+/**
+ * @brief Prints a signed long integer in the given base to a file descriptor.
+ *
+ * Recursively prints each digit of n using the characters in base.
+ * Prints a '-' sign for negative numbers.
+ *
+ * @param n The signed long integer to print.
+ * @param base A string representing the base characters.
+ * @param fd The file descriptor to print to.
+ * @return The number of characters printed.
+ */
 int	ft_printbase_fd(long n, const char *base, int fd)
 {
 	static int	base_size;
@@ -53,6 +83,16 @@ int	ft_printbase_fd(long n, const char *base, int fd)
 			+ ft_printbase_fd(n % base_size, base, fd));
 }
 
+/**
+ * @brief Prints an unsigned long integer in the given base to a file descriptor.
+ *
+ * Recursively prints each digit of n using the characters in base.
+ *
+ * @param n The unsigned long integer to print.
+ * @param base A string representing the base characters.
+ * @param fd The file descriptor to print to.
+ * @return The number of characters printed.
+ */
 int	ft_printubase_fd(unsigned long n, const char *base, int fd)
 {
 	static unsigned short	base_size;

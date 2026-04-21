@@ -13,9 +13,13 @@
 #include "../../include/ctype.h"
 
 /**
- * All printable characters.
- * Combination of:
- * isgraph + SPACE character (32)
+ * @brief Checks if a character is printable.
+ *
+ * Printable characters include all graphical characters and the space character.
+ * Equivalent to: ft_isgraph(c) || c == ' ' (ASCII 32-126).
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a printable character (including space), false otherwise.
  */
 bool	ft_isprint(int c)
 {

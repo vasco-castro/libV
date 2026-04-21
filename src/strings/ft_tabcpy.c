@@ -13,11 +13,14 @@
 #include "../../include/string.h"
 
 /**
- * ft_tabcpy - Creates a deep copy of a NULL-terminated array of strings.
- * @src: The source array of strings (NULL-terminated).
+ * @brief Creates a deep copy of a NULL-terminated array of strings.
  *
- * Return: A newly allocated copy of the array, or NULL on failure.
- * 	The caller is responsible for freeing the returned array with ft_tabfree().
+ * Allocates a new array and duplicates each string from src.
+ * The caller is responsible for freeing the returned array with ft_tabfree().
+ *
+ * @param src The source NULL-terminated array of strings to copy.
+ * @return A newly allocated copy of the array, or NULL if src is NULL
+ *         or if any allocation fails.
  */
 char	**ft_tabcpy(char **src)
 {

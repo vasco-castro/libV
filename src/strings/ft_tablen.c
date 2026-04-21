@@ -12,6 +12,12 @@
 
 #include "../../include/string.h"
 
+/**
+ * @brief Returns the number of strings in a NULL-terminated array.
+ *
+ * @param tab The NULL-terminated array of strings to measure.
+ * @return The number of non-NULL entries in tab, or 0 if tab is NULL.
+ */
 size_t	ft_tablen(char **tab)
 {
 	size_t	len;

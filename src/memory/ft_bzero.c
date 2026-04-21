@@ -12,6 +12,12 @@
 
 #include "../../include/memory.h"
 
+/**
+ * @brief Sets the first n bytes of memory area s to zero.
+ *
+ * @param s Pointer to the memory area to zero out.
+ * @param n Number of bytes to set to zero.
+ */
 void	ft_bzero(void *s, size_t n)
 {
 	char	*src;

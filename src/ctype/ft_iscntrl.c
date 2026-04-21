@@ -13,7 +13,13 @@
 #include "../../include/ctype.h"
 
 /**
- * Every non-printable characters characters.
+ * @brief Checks if a character is a control character.
+ *
+ * Control characters are non-printable characters with ASCII values
+ * 0-31 and 127 (DEL).
+ *
+ * @param c The character to check, passed as an int.
+ * @return true if c is a control character, false otherwise.
  */
 bool	ft_iscntrl(int c)
 {
