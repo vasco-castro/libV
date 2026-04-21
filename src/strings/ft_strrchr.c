@@ -23,6 +23,7 @@
  * @param s Pointer to the null-terminated string to be searched.
  * @param c Character to locate (passed as an `int`, converted to `char`).
  * @return Pointer to the last occurrence of `c` in `s`, or `NULL` if not found.
+ *         Returns `NULL` if `s` is `NULL`.
  */
 char	*ft_strrchr(const char *s, int c)
 {
@@ -30,6 +31,8 @@ char	*ft_strrchr(const char *s, int c)
 	char			chr;
 	char			*rchr;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	chr = (char)c;
 	rchr = NULL;

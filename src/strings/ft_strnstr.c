@@ -25,12 +25,15 @@
  * @param len Maximum number of characters of `haystack` to search.
  * @return Pointer to the beginning of the located substring in `haystack`,
  * or `NULL` if the substring is not found within the first `len` characters.
+ * Returns `NULL` if either `haystack` or `needle` is `NULL`.
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
+	if (!haystack || !needle)
+		return (NULL);
 	i = 0;
 	j = 0;
 	if (needle[0] == 0)

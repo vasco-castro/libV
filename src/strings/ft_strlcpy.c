@@ -24,13 +24,18 @@
  * @param size The total size of the destination buffer (dst).
  * @return The length of the source string `src`.
  *         If the return value is >= size, truncation occurred.
+ *         Returns the length of `src` without writing if `dst` is `NULL`.
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 	size_t	copy_len;
 
+	if (!src)
+		src = "";
 	src_len = ft_strlen(src);
+	if (!dst)
+		return (src_len);
 	if (size == 0)
 		return (src_len);
 	copy_len = size - 1;
