@@ -6,12 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:21:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/16 18:02:41 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/01 09:37:48 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
-#include <stdbool.h>
 
 /*
  * This function returns true if debug mode is ON, and false otherwise.

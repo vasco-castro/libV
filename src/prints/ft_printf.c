@@ -6,20 +6,26 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:48:01 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/15 21:01:22 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/01 09:37:38 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/prints.h"
-#include "../../include/debug.h"
 
 /**
- * @brief Dispatches printing based on format specifier.
- * @param format Format specifier character.
- * @param ap Pointer to va_list of arguments.
- * @param fd File descriptor to print to.
+ * @brief Select and perform a single conversion from a format string.
  *
- * @return the number of characters printed for the given format.
+ * Reads the next argument(s) from the provided `va_list` pointer using
+ * `va_arg` according to `format`, formats the value and writes it to
+ * the given file descriptor.
+ *
+ * @param format Conversion specifier character (e.g. 'd', 's', 'p').
+ * @param ap Pointer to a `va_list` that will be advanced by this function.
+ *           The caller may provide a copy (via `va_copy`) to avoid
+ *           corrupting the caller's original `va_list`.
+ * @param fd File descriptor to write output to (e.g. `STDOUT_FILENO`).
+ * @return Number of characters written for this conversion, or 0 if the
+ *         specifier is unknown.
  */
 static int	printer(char format, va_list *ap, int fd)
 {
@@ -50,10 +56,16 @@ static int	printer(char format, va_list *ap, int fd)
 }
 
 /**
- * @brief Custom printf implementation that prints to stdout.
- * @param str Format string containing conversion specifiers.
- * @param ... Variable arguments to format and print.
- * @return the number of characters printed, or -1 on error.
+ * @brief Print formatted output to standard output.
+ *
+ * This function parses `str` and consumes the trailing variable
+ * arguments, formatting them according to the conversion specifiers in
+ * `str`. It returns the total number of characters printed. If `str` is
+ * NULL the function returns -1 and does not attempt to read varargs.
+ *
+ * @param str Null-terminated format string containing conversion specifiers.
+ * @param ... Variable arguments matching the conversion specifiers.
+ * @return Total number of characters printed, or -1 if `str` is NULL.
  */
 int	ft_printf(const char *str, ...)
 {
@@ -79,11 +91,16 @@ int	ft_printf(const char *str, ...)
 }
 
 /**
- * @brief Custom fprintf implementation that prints to a file descriptor.
- * @param fd File descriptor to print to.
- * @param str Format string containing conversion specifiers.
- * @param ... Variable arguments to format and print.
- * @return the number of characters printed, or -1 on error.
+ * @brief Print formatted output to a file descriptor.
+ *
+ * Works like `ft_printf` but writes to the provided file descriptor `fd`.
+ * If `str` is NULL the function returns -1 and does not read any
+ * variable arguments.
+ *
+ * @param fd File descriptor to write output to.
+ * @param str Null-terminated format string containing conversion specifiers.
+ * @param ... Variable arguments matching the conversion specifiers.
+ * @return Total number of characters printed, or -1 if `str` is NULL.
  */
 int	ft_dprintf(int fd, const char *str, ...)
 {
@@ -108,8 +125,20 @@ int	ft_dprintf(int fd, const char *str, ...)
 	return (len);
 }
 
-int	ft_vprintf(const char *str, va_list ap)
+	/**
+	 * @brief Variant of `ft_printf` that accepts a `va_list`.
+	 *
+	 * This function copies the provided `va_list` with `va_copy` to avoid
+	 * modifying the caller's list and passes the copy to the internal
+	 * `printer` helper which expects a `va_list *`.
+	 *
+	 * @param str Format string containing conversion specifiers.
+	 * @param ap   `va_list` provided by the caller (not modified).
+	 * @return the number of characters printed, or -1 on error.
+	 */
+int	ft_vprintf(const char *str, va_list args)
 {
+	va_list	ap;
 	int		len;
 	int		i;
 
@@ -117,6 +146,7 @@ int	ft_vprintf(const char *str, va_list ap)
 		return (-1);
 	i = 0;
 	len = 0;
+	va_copy(ap, args);
 	while (str[i])
 	{
 		if (str[i] == FORMATTER)
@@ -125,11 +155,25 @@ int	ft_vprintf(const char *str, va_list ap)
 			len += ft_printchar(str[i]);
 		i++;
 	}
+	va_end(ap);
 	return (len);
 }
 
-int	ft_vdprintf(int fd, const char *str, va_list ap)
+	/**
+	 * @brief Variant of `ft_dprintf` that accepts a `va_list`.
+	 *
+	 * This function copies the provided `va_list` with `va_copy` to avoid
+	 * modifying the caller's list and passes the copy to the internal
+	 * `printer` helper which expects a `va_list *`.
+	 *
+	 * @param fd   File descriptor to print to.
+	 * @param str  Format string containing conversion specifiers.
+	 * @param ap   `va_list` provided by the caller (not modified).
+	 * @return the number of characters printed, or -1 on error.
+	 */
+int	ft_vdprintf(int fd, const char *str, va_list args)
 {
+	va_list	ap;
 	int		len;
 	int		i;
 
@@ -137,6 +181,7 @@ int	ft_vdprintf(int fd, const char *str, va_list ap)
 		return (-1);
 	i = 0;
 	len = 0;
+	va_copy(ap, args);
 	while (str[i])
 	{
 		if (str[i] == FORMATTER)
@@ -145,5 +190,6 @@ int	ft_vdprintf(int fd, const char *str, va_list ap)
 			len += ft_printchar_fd(str[i], fd);
 		i++;
 	}
+	va_end(ap);
 	return (len);
 }
