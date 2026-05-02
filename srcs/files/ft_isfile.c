@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 09:17:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:46:05 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:53:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/files.h"
+#include "includes/files.h"
 
 /**
  * @brief Checks if the given filename ends with the specified file extension

@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:16:02 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:54:18 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:52:49 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "libft.h"
 
 /**
  * @brief Calculates the number of digits in a number.

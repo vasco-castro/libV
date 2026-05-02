@@ -15,20 +15,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@printf "$(PURPLE)%s$(RESET)\n" "$$(cat banner.txt)"
 	@$(RM) $(NAME)
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-
-%.o: %.c
-	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
-
--include $(OBJS:.o=.d)
+	@$(AR) $(NAME) $(OBJS)
 
 clean:
 	@printf "$(YELLOW)Cleaning $(NAME) objects.$(RESET)\n"
-	@$(RM) $(OBJS) $(OBJS:.o=.d) $(TEST_OBJ)
+	@$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	@printf "$(YELLOW)Cleaning $(NAME) binaries.$(RESET)\n"
-	@$(RM) $(NAME) test
+	@$(RM) $(NAME)
 
 re: fclean all
 

@@ -6,12 +6,12 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 14:38:04 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:46:05 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:53:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/prints.h"
-#include "../../includes/files.h"
+#include "includes/prints.h"
+#include "includes/files.h"
 
 /**
  * @brief Prints the contents of a file to the standard output

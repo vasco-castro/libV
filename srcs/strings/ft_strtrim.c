@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 20:54:59 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:46:05 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:53:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/string.h"
+#include "includes/string.h"
 
 /**
  * @brief Trim characters from both ends of a string.

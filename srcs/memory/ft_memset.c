@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 20:01:51 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:46:05 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:53:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/memory.h"
+#include "includes/memory.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

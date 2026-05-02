@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:20:09 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:54:18 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:52:49 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "libft.h"
 
 /**
  * @brief Converts the initial portion of the string pointed to by 'str' to a

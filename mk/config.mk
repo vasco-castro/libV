@@ -3,8 +3,7 @@
 CC		?= cc
 CFLAGS	:= -Wall -Wextra -Werror
 
-AR		:= ar
-ARFLAGS	:= rcs
+AR		:= ar rcs
 RM		:= rm -f
 
 # Colors

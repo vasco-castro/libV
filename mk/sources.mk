@@ -1,10 +1,12 @@
 
-# Directories
-SRCS_DIR	:= srcs/
+# Main Directories
 INCS_DIR	:= includes/
+SRCS_DIR	:= srcs/
+OBJS_DIR	:= objs/
 
-CFLAGS		+= -I$(INCS_DIR)
+CFLAGS		+= -I. -I$(INCS_DIR)
 
+# Source files directories
 CVR_DIR		:= converts/
 CTY_DIR		:= ctype/
 FLS_DIR		:= files/
@@ -42,5 +44,15 @@ SRCS		:= $(addprefix $(SRCS_DIR), $(addsuffix .c, \
 	$(addprefix $(DBG_DIR), $(DBG_FTS)) \
 ))
 
-# Object files convertion
-OBJS		:= $(SRCS:%.c=%.o)
+# Create object files and dependency files from source files
+OBJS 		:= $(SRCS:$(SRCS_DIR)%.c=$(OBJS_DIR)%.o)
+DEPS 		:= $(OBJS:.o=.d)
+
+# Compile each source into its corresponding object file. Using a pattern rule
+# ensures `$@`/`$<` map correctly for each pair and `make` accurately
+# rebuilds only changed objects.
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+
+-include $(DEPS)

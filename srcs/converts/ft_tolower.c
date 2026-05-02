@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:57:15 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 19:54:18 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/02 21:52:49 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "libft.h"
 
 /**
  * @brief Converts an uppercase letter to lowercase.
