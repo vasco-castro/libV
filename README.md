@@ -20,27 +20,27 @@ The objective is to provide a reliable foundation for future projects by:
 
 ### Codebase overview
 
-The project is structured by modules, with headers in `include/` and implementations in `src/`:
+The project is structured by modules, with headers in `includes/` and implementations in `srcs/`:
 
-- `src/converts` — numeric/character conversion helpers  
+- `srcs/converts` — numeric/character conversion helpers
   Examples: `ft_atoi`, `ft_atol`, `ft_itoa`, `ft_tolower`, `ft_toupper`
-- `src/ctype` — character classification and checks  
+- `srcs/ctype` — character classification and checks
   Examples: `ft_isalpha`, `ft_isdigit`, `ft_isspace`, `ft_isxdigit`, `ft_issign`
-- `src/memory` — memory operations  
+- `srcs/memory` — memory operations
   Examples: `ft_memset`, `ft_memcpy`, `ft_memmove`, `ft_memcmp`, `ft_calloc`
-- `src/strings` — string and token utilities  
+- `srcs/strings` — string and token utilities
   Examples: `ft_strlen`, `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_split`, `ft_strtrim`
-- `src/lists` — singly linked list utilities  
+- `srcs/lists` — singly linked list utilities
   Examples: `ft_lstnew`, `ft_lstadd_back`, `ft_lstiter`, `ft_lstmap`, `ft_lstclear`
-- `src/prints` — formatted/output helpers  
+- `srcs/prints` — formatted/output helpers
   Examples: `ft_printf`, `ft_printchar`, `ft_printstr`, `ft_printptr`, `ft_printbase`
-- `src/files` — file-related helpers  
+- `srcs/files` — file-related helpers
   Examples: `get_next_line`, `ft_isfile`
-- `src/debug` — runtime debug mode helpers and CLI debug-flag parsing
+- `srcs/debug` — runtime debug mode helpers and CLI debug-flag parsing
   Examples: `debug_mode`, `change_debug_mode`, `is_debug_flag`, `parse_debug_mode`
 
 Main umbrella header:
-- `include/libft.h` (includes all module headers)
+- `libft.h` (includes all module headers)
 
 Build configuration:
 - `Makefile`
@@ -86,24 +86,24 @@ Include headers (at minimum):
 Compile and link (example):
 
 ```bash
-cc -Wall -Wextra -Werror your_file.c -I./include -L. -lft -o your_program
+cc -Wall -Wextra -Werror "your_file.c" -I./include -L. -lft -o "your_program"
 ```
 
 > If integrating from another project path, adjust `-I` and `-L` accordingly.
 
 ### 5) Debug mode helpers
 
-`libV` includes a small runtime debug-state helper API in `src/debug/debug.c` and `include/debug.h`.
+`libV` includes a small runtime debug-state helper API in `srcs/debug/debug.c` and `includes/debug.h`.
 
 Available helpers:
 
-- `bool debug_mode(void);`  
+- `bool debug_mode(void);`
   Returns the current debug state.
-- `bool change_debug_mode(bool set);`  
+- `bool change_debug_mode(bool set);`
   If `set == true`, toggles the internal debug state. Returns current state.
-- `bool is_debug_flag(const char *arg);`  
+- `bool is_debug_flag(const char *arg);`
   Returns `true` for `--debug` or `-d`.
-- `bool parse_debug_mode(int *argc, char *argv[]);`  
+- `bool parse_debug_mode(int *argc, char *argv[]);`
   Scans arguments for debug flags (`--debug` or `-d`). If found, removes the flag from `argv`, decrements `argc`, and enables debug mode. Returns `true` if a debug flag was found and processed, `false` otherwise.
 
 Typical usage in `main`:
@@ -118,6 +118,17 @@ int	main(int argc, char *argv[])
 }
 ```
 
+Or use the built-in debug-format-printer like this:
+
+```c
+int	main(int argc, char *argv[])
+{
+	parse_debug_mode(&argc, argv);
+	debug("This is only printed when debug mode is active\n");
+	/* ...rest of program... */
+}
+```
+
 Notes:
 - The debug state is kept internally through a static variable.
 - `parse_debug_mode` processes the first debug flag occurrence it encounters and returns immediately, making it safe for programs that expect at most one debug flag.
@@ -128,11 +139,11 @@ Notes:
 
 ### Classic references
 
-- Linux man pages (`man 3 <function>`)  
+- Linux man pages (`man 3 <function>`)
   Useful for expected behavior of libc-like functions.
-- The Open Group Base Specifications (POSIX)  
+- The Open Group Base Specifications (POSIX)
   https://pubs.opengroup.org/
-- cppreference C library pages  
+- cppreference C library pages
   https://en.cppreference.com/w/c/header
 - 42 Norm (Norminette) documentation (intra / official resources)
 - 42 project subjects:

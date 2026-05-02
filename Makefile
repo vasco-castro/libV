@@ -1,3 +1,9 @@
+# ██╗     ██╗██████╗ ███████╗████████╗
+# ██║     ██║██╔══██╗██╔════╝╚══██╔══╝
+# ██║     ██║██████╔╝█████╗     ██║
+# ██║     ██║██╔══██╗██╔══╝     ██║
+# ███████╗██║██████╔╝██║        ██║
+# ╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝
 
 -include mk/config.mk
 -include mk/sources.mk
@@ -25,13 +31,6 @@ fclean: clean
 	@$(RM) $(NAME) test
 
 re: fclean all
-
-# t: test
-# 	@./$<
-
-# test: $(NAME) $(TEST_OBJ)
-# 	@$(CC) $(CFLAGS) -I./tests $(NAME) $(TEST_OBJ) -o $@ -lft -L.
-# 	@printf "$(BLUE)Running test file.$(RESET)\n"
 
 .PHONY: all clean fclean re t
 
