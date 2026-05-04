@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_paths.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:44:52 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:18:26 by vsoares-          #+#    #+#             */
+/*   Updated: 2026/05/04 01:22:50 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_PATHS_H
+# define FT_PATHS_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <stdint.h>
 # include <stdbool.h>
-# include <stdarg.h>
+# include <stddef.h>
 # include <limits.h>
-# include <fcntl.h>
-
-# include "colors.h"
-# include "converts.h"
-# include "ft_ctype.h"
-# include "debug.h"
-# include "get_next_line.h"
-# include "lists.h"
-# include "ft_memory.h"
-# include "ft_paths.h"
-# include "point.h"
-# include "ft_printf.h"
 # include "ft_string.h"
 
-#endif /* LIBFT_H */
+char	*ft_dirname(const char *filename);
+char	*ft_basename(const char *filename);
+char	*ft_extension(const char *filename);
+bool	ft_has_extension(const char *filename, const char *extension);
+
+#endif /* FT_PATHS_H */

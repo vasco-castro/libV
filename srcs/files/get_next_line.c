@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:13:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 21:53:22 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 01:20:48 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/files.h"
+#include "get_next_line.h"
 
 /**
  * line_len - Calculates the length of a line up to a newline character.

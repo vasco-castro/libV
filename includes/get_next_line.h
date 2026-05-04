@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:44:52 by vsoares-         ###   ########.fr       */
+/*   Created: 2025/02/28 21:18:26 by vsoares-          #+#    #+#             */
+/*   Updated: 2026/05/04 01:05:25 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <stdint.h>
 # include <stdbool.h>
-# include <stdarg.h>
+# include <stddef.h>
 # include <limits.h>
 # include <fcntl.h>
 
-# include "colors.h"
-# include "converts.h"
-# include "ft_ctype.h"
-# include "debug.h"
-# include "get_next_line.h"
-# include "lists.h"
-# include "ft_memory.h"
-# include "ft_paths.h"
-# include "point.h"
-# include "ft_printf.h"
-# include "ft_string.h"
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
 
-#endif /* LIBFT_H */
+# define FD_MAX 1024
+
+char	*get_next_line(int fd);
+
+#endif

@@ -22,27 +22,37 @@ The objective is to provide a reliable foundation for future projects by:
 
 The project is structured by modules, with headers in `includes/` and implementations in `srcs/`:
 
-- `srcs/converts` — numeric/character conversion helpers
+- `srcs/converts/` — numeric/character conversion helpers
+  Header: `includes/converts.h`
   Examples: `ft_atoi`, `ft_atol`, `ft_itoa`, `ft_tolower`, `ft_toupper`
-- `srcs/ctype` — character classification and checks
+- `srcs/ft_ctype/` — character classification and checks
+  Header: `includes/ft_ctype.h`
   Examples: `ft_isalpha`, `ft_isdigit`, `ft_isspace`, `ft_isxdigit`, `ft_issign`
-- `srcs/memory` — memory operations
+- `srcs/ft_memory/` — memory operations
+  Header: `includes/ft_memory.h`
   Examples: `ft_memset`, `ft_memcpy`, `ft_memmove`, `ft_memcmp`, `ft_calloc`
-- `srcs/strings` — string and token utilities
+- `srcs/ft_string/` — string and token utilities
+  Header: `includes/ft_string.h`
   Examples: `ft_strlen`, `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_split`, `ft_strtrim`
-- `srcs/lists` — singly linked list utilities
+- `srcs/lists/` — singly linked list utilities
+  Header: `includes/lists.h`
   Examples: `ft_lstnew`, `ft_lstadd_back`, `ft_lstiter`, `ft_lstmap`, `ft_lstclear`
-- `srcs/prints` — formatted/output helpers
+- `srcs/ft_printf/` — formatted/output helpers
+  Header: `includes/ft_printf.h`
   Examples: `ft_printf`, `ft_printchar`, `ft_printstr`, `ft_printptr`, `ft_printbase`
-- `srcs/files` — file-related helpers
-  Examples: `get_next_line`, `ft_isfile`
-- `srcs/debug` — runtime debug mode helpers and CLI debug-flag parsing
+- `srcs/files/` — file-related helpers
+  Headers: `includes/get_next_line.h`, `includes/ft_paths.h`
+  Examples: `get_next_line`, `ft_dirname`, `ft_basename`, `ft_extension`, `ft_has_extension`
+- `srcs/debug/` — runtime debug mode helpers and CLI debug-flag parsing
+  Header: `includes/debug.h`
   Examples: `debug_mode`, `change_debug_mode`, `is_debug_flag`, `parse_debug_mode`
 
 Main umbrella header:
+
 - `libft.h` (includes all module headers)
 
 Build configuration:
+
 - `Makefile`
 - `mk/config.mk`
 - `mk/sources.mk`
@@ -130,6 +140,7 @@ int	main(int argc, char *argv[])
 ```
 
 Notes:
+
 - The debug state is kept internally through a static variable.
 - `parse_debug_mode` processes the first debug flag occurrence it encounters and returns immediately, making it safe for programs that expect at most one debug flag.
 
@@ -142,9 +153,9 @@ Notes:
 - Linux man pages (`man 3 <function>`)
   Useful for expected behavior of libc-like functions.
 - The Open Group Base Specifications (POSIX)
-  https://pubs.opengroup.org/
+  <https://pubs.opengroup.org/>
 - cppreference C library pages
-  https://en.cppreference.com/w/c/header
+  <https://en.cppreference.com/w/c/header>
 - 42 Norm (Norminette) documentation (intra / official resources)
 - 42 project subjects:
   - `libft`
@@ -154,6 +165,7 @@ Notes:
 ### How AI was used
 
 AI assistance was used as a support tool for:
+
 - README/documentation drafting and structure improvements
 - Wording clarity and section organization
 - Reviewing command examples for build/integration instructions

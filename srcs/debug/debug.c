@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:21:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/02 21:52:49 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 00:28:42 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,3 +91,19 @@ int	debug(const char *str, ...)
 	va_end(ap);
 	return (len);
 }
+
+// int main(void)
+// {
+// 	/* should not print because debug is initially off */
+// 	debug("Before enable: %s\n", "no-print");
+
+// 	/* enable debug mode */
+// 	change_debug_mode(true);
+
+// 	/* should print to stderr */
+// 	debug("After enable: num=%d, str=%s\n", 42, "hello");
+
+// 	ft_printf("This is a normal print: %d\n", 123);
+
+// 	return (0);
+// }
