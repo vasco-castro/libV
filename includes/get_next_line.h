@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:18:26 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:05:25 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:40:15 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@
 
 char	*get_next_line(int fd);
 
-#endif
+#endif /* GET_NEXT_LINE_H */

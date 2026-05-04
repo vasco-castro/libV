@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.h                                           :+:      :+:    :+:   */
+/*   ft_colors.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:59:30 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/09/07 12:52:39 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:39:02 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLORS_H
-# define COLORS_H
+#ifndef FT_COLORS_H
+# define FT_COLORS_H
 
 // Text Reset
 # define RESET       "\e[0m"
@@ -86,4 +86,4 @@
 # define ON_ICYAN    "\e[0;106m"
 # define ON_IWHITE   "\e[0;107m"
 
-#endif
+#endif /* FT_COLORS */

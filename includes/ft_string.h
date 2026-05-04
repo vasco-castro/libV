@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:18:14 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:22:50 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:40:11 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,4 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strndup(const char *src, size_t n);
 size_t	ft_strnlen(const char *s, size_t n);
 
-#endif
+#endif /* FT_STRING_H */

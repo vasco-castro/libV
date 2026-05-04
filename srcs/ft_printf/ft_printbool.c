@@ -6,12 +6,12 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:15:44 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:09:10 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:11:10 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "colors.h"
+#include "ft_colors.h"
 
 int	ft_printbool(bool b)
 {

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 10:17:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/11/15 21:18:32 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/07 18:52:19 by vsoares-          #+#    #+#             */
+/*   Updated: 2026/05/04 02:05:43 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "ft_ctype.h"
 
-# include <stdbool.h>
-# include <stdarg.h>
-
-bool	debug_mode(void);
-bool	change_debug_mode(bool set);
-bool	is_debug_flag(const char *arg);
-bool	parse_debug_mode(int *argc, char *argv[]);
-
-int		debug(const char *str, ...);
-
-#endif /* DEBUG_H */
+/**
+ * @brief Converts a lowercase letter to uppercase.
+ * @param c The character to be converted.
+ * @return The uppercase equivalent of the character if it is lowercase,
+ *         otherwise the character unchanged.
+ */
+int	ft_toupper(int c)
+{
+	if (ft_islower(c))
+		return (c - ('a' - 'A'));
+	return (c);
+}

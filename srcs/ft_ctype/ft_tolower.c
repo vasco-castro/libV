@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 14:33:32 by vsoares-          #+#    #+#             */
-/*   Updated: 2025/08/30 23:11:44 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/07 18:57:15 by vsoares-          #+#    #+#             */
+/*   Updated: 2026/05/04 02:05:38 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-# define POINT_H
+#include "ft_ctype.h"
 
-typedef struct s_point
+/**
+ * @brief Converts an uppercase letter to lowercase.
+ * @param c The character to be converted.
+ * @return The lowercase equivalent of the character if it is uppercase,
+ *         otherwise the character unchanged.
+ */
+int	ft_tolower(int c)
 {
-	int	x;
-	int	y;
-}	t_point;
-
-#endif // POINT_H
+	if (ft_isupper(c))
+		return (c + ('a' - 'A'));
+	return (c);
+}

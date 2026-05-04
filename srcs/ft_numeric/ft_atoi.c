@@ -53,7 +53,7 @@ int	ft_atoi(const char *str)
  * @param sign The sign of the number (1 for positive, -1 for negative).
  * @return true if overflow is detected, false otherwise.
  */
-bool	ft_is_overflowed(unsigned long nb, int sign)
+static bool	ft_is_overflowed(unsigned long nb, int sign)
 {
 	if (sign == 1 && nb > INT_MAX)
 		return (true);

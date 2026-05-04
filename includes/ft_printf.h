@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:17:48 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:44:17 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:39:54 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,4 @@ int	ft_dprintf(int fd, const char *str, ...);
 int	ft_vprintf(const char *str, va_list ap);
 int	ft_vdprintf(int fd, const char *str, va_list ap);
 
-#endif
+#endif /* FT_PRINTF_H */

@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 21:18:00 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:22:50 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:39:35 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ void	*ft_memset(void *b, int c, size_t len);
 
 void	ft_free(void *ptr);
 
-#endif
+#endif /* FT_MEMORY_H */

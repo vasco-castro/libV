@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 21:08:42 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:44:52 by vsoares-         ###   ########.fr       */
+/*   Updated: 2026/05/04 02:22:52 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@
 # include <limits.h>
 # include <fcntl.h>
 
-# include "colors.h"
-# include "converts.h"
+# include "ft_colors.h"
+# include "ft_numeric.h"
 # include "ft_ctype.h"
-# include "debug.h"
+# include "ft_debug.h"
 # include "get_next_line.h"
-# include "lists.h"
+# include "ft_lst.h"
 # include "ft_memory.h"
 # include "ft_paths.h"
-# include "point.h"
+# include "ft_points.h"
 # include "ft_printf.h"
 # include "ft_string.h"
 
