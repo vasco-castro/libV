@@ -15,11 +15,11 @@
 int	ft_printptr(void *ptr)
 {
 	int				counter;
-	unsigned long	ptr_value;
+	uintptr_t		ptr_value;
 
 	if (!ptr)
 		return (ft_printstr("(nil)"));
-	ptr_value = (unsigned long)ptr;
+	ptr_value = (uintptr_t)ptr;
 	counter = ft_printstr("0x");
 	counter += ft_printubase(ptr_value, BASE_16);
 	return (counter);
@@ -28,11 +28,11 @@ int	ft_printptr(void *ptr)
 int	ft_printptr_fd(void *ptr, int fd)
 {
 	int				counter;
-	unsigned long	ptr_value;
+	uintptr_t		ptr_value;
 
 	if (!ptr)
 		return (ft_printstr_fd("(nil)", fd));
-	ptr_value = (unsigned long)ptr;
+	ptr_value = (uintptr_t)ptr;
 	counter = ft_printstr_fd("0x", fd);
 	counter += ft_printubase_fd(ptr_value, BASE_16, fd);
 	return (counter);
