@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:58:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 01:22:50 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:33:56 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,26 @@
 /**
  * @brief Allocates memory and initializes it to zero.
  *
- * This function allocates memory for an array of count elements of size bytes
+ * This function allocates memory for an array of n elements of size bytes
  * each and initializes all bytes in the allocated memory to zero.
  * It includes overflow protection.
  *
- * @param count Number of elements to allocate
+ * @param n Number of elements to allocate
  * @param size Size of each element in bytes
  *
  * @return A pointer to the allocated memory. Returns NULL if allocation fails
  *         or if overflow would occur.
  */
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t n, size_t size)
 {
-	void	*alloc;
 	size_t	total_size;
+	void	*ptr;
 
-	total_size = count * size;
-	if (count && ((total_size / count) != size))
+	total_size = n * size;
+	if (n && (total_size / n != size))
 		return (NULL);
-	alloc = malloc(total_size);
-	if (!alloc)
-		return (NULL);
-	ft_bzero(alloc, total_size);
-	return (alloc);
+	ptr = malloc(total_size);
+	if (ptr)
+		ft_bzero(ptr, total_size);
+	return (ptr);
 }

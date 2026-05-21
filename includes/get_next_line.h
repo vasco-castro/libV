@@ -21,10 +21,11 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+#  define BUFFER_SIZE 4096 // (1 << 12)
 # endif
-
-# define FD_MAX 1024
+# ifndef FD_MAX
+#  define FD_MAX 1024 // (1 << 10)
+# endif
 
 char	*get_next_line(int fd);
 

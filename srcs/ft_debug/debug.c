@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:21:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2026/05/04 00:28:42 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/11/16 18:02:41 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,19 @@ bool	parse_debug_mode(int *argc, char *argv[])
 	return (false);
 }
 
+/**
+ * @brief Prints a formatted debug message to stderr if debug mode is enabled.
+ *
+ * This function behaves like printf, but only outputs if debug mode is active.
+ * If debug mode is disabled, it returns 0 without printing anything.
+ * If the format string is NULL, it returns -1 to indicate an error.
+ * The debug mode can be toggled using the change_debug_mode function or by
+ * parsing command-line arguments with parse_debug_mode.
+ * 
+ * @param str The format string for the debug message.
+ * @param ... The arguments for the format string.
+ * @return The number of characters printed, or -1 if an error occurred.
+ */
 int	debug(const char *str, ...)
 {
 	va_list	ap;
