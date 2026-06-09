@@ -1,3 +1,4 @@
+
 # ██╗     ██╗██████╗ ███████╗████████╗
 # ██║     ██║██╔══██╗██╔════╝╚══██╔══╝
 # ██║     ██║██████╔╝█████╗     ██║
@@ -6,22 +7,29 @@
 # ╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝
 
 # C compiler & C flags
-CC		?= cc
-CFLAGS	:= -Wall -Wextra -Werror
+CC			?= cc
+CFLAGS		:= -Wall -Wextra -Werror
 
-AR		:= ar rcs
-RM		:= rm -f
+AR			:= ar rcs
+RM			:= rm -f
+
+# Main Directories
+INCS_DIR	:= includes/
+SRCS_DIR	:= srcs/
+OBJS_DIR	:= objs/
+
+CFLAGS		+= -I. -I$(INCS_DIR)
 
 # Colors
-BLACK	:= \e[1;30m
-RED		:= \e[1;31m
-GREEN	:= \e[1;32m
-YELLOW	:= \e[1;33m
-BLUE	:= \e[1;34m
-PURPLE	:= \e[1;35m
-CYAN	:= \e[1;36m
-WHITE	:= \e[1;37m
-RESET	:= \e[0m
+BLACK		:= \e[1;30m
+RED			:= \e[1;31m
+GREEN		:= \e[1;32m
+YELLOW		:= \e[1;33m
+BLUE		:= \e[1;34m
+PURPLE		:= \e[1;35m
+CYAN		:= \e[1;36m
+WHITE		:= \e[1;37m
+RESET		:= \e[0m
 
 # TO CREATE BANNER USE FOLLOW LINKS:
 # https://devops.datenkollektiv.de/banner.txt/index.html

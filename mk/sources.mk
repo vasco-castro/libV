@@ -1,16 +1,10 @@
+
 # ██╗     ██╗██████╗ ███████╗████████╗
 # ██║     ██║██╔══██╗██╔════╝╚══██╔══╝
 # ██║     ██║██████╔╝█████╗     ██║
 # ██║     ██║██╔══██╗██╔══╝     ██║
 # ███████╗██║██████╔╝██║        ██║
 # ╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝
-
-# Main Directories
-INCS_DIR	:= includes/
-SRCS_DIR	:= srcs/
-OBJS_DIR	:= objs/
-
-CFLAGS		+= -I. -I$(INCS_DIR)
 
 # Source files directories
 NUM_DIR		:= ft_numeric/
