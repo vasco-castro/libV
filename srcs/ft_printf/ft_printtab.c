@@ -13,29 +13,19 @@
 #include "ft_printf.h"
 
 /**
- * @brief Prints each string from an array of strings to standard output,
- *        with a newline after each string.
+ * @brief Prints each string from an array of strings to standard output.
  *
  * @param tab Array of strings to print (must be NULL-terminated)
  * @return Total number of characters printed, or -1 if tab is NULL
  */
 int	ft_printtab(char **tab)
 {
-	int	i;
-	int	count;
-
-	if (!tab)
-		return (-1);
-	i = 0;
-	count = 0;
-	while (tab[i])
-		count += ft_println(tab[i++]);
-	return (count);
+	return (ft_printtab_join(tab, ""));
 }
 
 /**
  * @brief Prints each string from an array of strings to specified file
- *        descriptor, with a newline after each string.
+ *        descriptor.
  *
  * @param tab Array of strings to print (must be NULL-terminated)
  * @param fd File descriptor to print to
@@ -44,71 +34,62 @@ int	ft_printtab(char **tab)
  */
 int	ft_printtab_fd(char **tab, int fd)
 {
-	int	i;
-	int	count;
-
-	if (!tab || fd < 0)
-		return (-1);
-	i = 0;
-	count = 0;
-	while (tab[i])
-		count += ft_println_fd(tab[i++], fd);
-	return (count);
+	return (ft_printtab_join_fd(tab, "", fd));
 }
 
 /**
- * @brief Prints each string from an array with a custom delim.
+ * @brief Prints each string from an array with a custom separator.
  *
  * @param tab Array of strings to print (must be NULL-terminated)
- * @param delim String to print between elements
+ * @param sep String to print between elements
  * @return Total number of characters printed, or -1 if tab is NULL
  */
-int	ft_printtab_delim(char *tab[], char *delim)
+int	ft_printtab_join(char *tab[], char *sep)
 {
 	int	i;
 	int	count;
 
 	if (!tab)
 		return (-1);
-	if (!delim)
-		return (ft_printtab(tab));
+	if (!sep)
+		sep = "";
 	i = 0;
 	count = 0;
 	while (tab[i])
 	{
 		count += ft_printstr(tab[i++]);
 		if (tab[i])
-			count += ft_printstr(delim);
+			count += ft_printstr(sep);
 	}
 	return (count);
 }
 
 /**
- * @brief Prints each string from an array with a custom delim to file
+ * @brief Prints each string from an array with a custom separator to file
  *        descriptor.
  *
  * @param tab Array of strings to print (must be NULL-terminated)
- * @param delim String to print between elements
+ * @param sep String to print between elements
  * @param fd File descriptor to print to
  * @return Total number of characters printed, or -1 if tab is NULL or
  *         fd is invalid
  */
-int	ft_printtab_delim_fd(char *tab[], char *delim, int fd)
+int	ft_printtab_join_fd(char *tab[], char *sep, int fd)
 {
 	int	i;
 	int	count;
 
 	if (!tab || fd < 0)
 		return (-1);
-	if (!delim)
-		return (ft_printtab_fd(tab, fd));
+	if (!sep)
+		sep = "";
 	i = 0;
 	count = 0;
 	while (tab[i])
 	{
 		count += ft_printstr_fd(tab[i++], fd);
 		if (tab[i])
-			count += ft_printstr_fd(delim, fd);
+			count += ft_printstr_fd(sep, fd);
 	}
 	return (count);
 }

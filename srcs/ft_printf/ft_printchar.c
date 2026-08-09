@@ -12,12 +12,31 @@
 
 #include "ft_printf.h"
 
+/**
+ * @brief Writes one character to standard output.
+ *
+ * @param c Character code to print.
+ * @return Number of bytes written, or -1 on error.
+ */
 int	ft_printchar(int c)
 {
-	return (write(1, &c, 1));
+	unsigned char	ch;
+
+	ch = (unsigned char)c;
+	return (write(STDOUT_FILENO, &ch, 1));
 }
 
-int	ft_printchar_fd(char c, int fd)
+/**
+ * @brief Writes one character to a file descriptor.
+ *
+ * @param c  Character code to print.
+ * @param fd Destination file descriptor.
+ * @return Number of bytes written, or -1 on error.
+ */
+int	ft_printchar_fd(int c, int fd)
 {
-	return (write(fd, &c, 1));
+	unsigned char	ch;
+
+	ch = (unsigned char)c;
+	return (write(fd, &ch, 1));
 }

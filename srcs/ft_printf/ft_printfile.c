@@ -34,7 +34,7 @@ int	ft_printfile(const char *filepath)
 	line = get_next_line(fd);
 	while (line)
 	{
-		count += ft_println(line);
+		count += ft_printstr(line);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -64,7 +64,7 @@ int	ft_printfile_fd(const char *filepath, int output_fd)
 	line = get_next_line(fd);
 	while (line)
 	{
-		count += ft_println_fd(line, output_fd);
+		count += ft_printstr_fd(line, output_fd);
 		free(line);
 		line = get_next_line(fd);
 	}

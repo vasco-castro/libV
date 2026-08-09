@@ -19,33 +19,33 @@
  * writes the result to @p fd.
  *
  * @param format  Conversion specifier character ('c', 's', 'd', …).
- * @param ap      Pointer to the caller's va_list; advanced in place.
+ * @param ap      Caller-provided va_list; advanced in place.
  * @param fd      File descriptor to write to.
  * @return Number of bytes written, or 0 for an unrecognised specifier.
  *
  * @note Unknown specifiers are silently ignored (0 bytes written).
  */
-static int	printer(char format, va_list *ap, int fd)
+static int	printer(char format, va_list ap, int fd)
 {
 	if (format == F_CHAR)
-		return (ft_printchar_fd(va_arg(*ap, int), fd));
-	else if (format == F_STRING)
-		return (ft_printstr_fd(va_arg(*ap, char *), fd));
-	else if (format == F_STRING_TAB)
-		return (ft_printtab_fd(va_arg(*ap, char **), fd));
-	else if (format == F_BOOL)
-		return (ft_printbool_fd(va_arg(*ap, int), fd));
-	else if (format == F_POINTER)
-		return (ft_printptr_fd(va_arg(*ap, void *), fd));
-	else if (format == F_DIGIT || format == F_INTEGER)
-		return (ft_printbase_fd((long)va_arg(*ap, int), BASE_10, fd));
-	else if (format == F_UNSIGNED)
-		return (ft_printbase_fd(va_arg(*ap, unsigned int), BASE_10, fd));
-	else if (format == F_HEXA)
-		return (ft_printubase_fd(va_arg(*ap, unsigned int), BASE_16, fd));
-	else if (format == F_HEXA_UP)
-		return (ft_printubase_fd(va_arg(*ap, unsigned int), BASE_16_UP, fd));
-	else if (format == FORMATTER)
+		return (ft_printchar_fd(va_arg(ap, int), fd));
+	if (format == F_STRING)
+		return (ft_printstr_fd(va_arg(ap, char *), fd));
+	if (format == F_STRING_TAB)
+		return (ft_printtab_fd(va_arg(ap, char **), fd));
+	if (format == F_BOOL)
+		return (ft_printbool_fd(va_arg(ap, int), fd));
+	if (format == F_POINTER)
+		return (ft_printptr_fd(va_arg(ap, void *), fd));
+	if (format == F_DIGIT || format == F_INTEGER)
+		return (ft_printbase_fd((long)va_arg(ap, int), BASE_10, fd));
+	if (format == F_UNSIGNED)
+		return (ft_printbase_fd(va_arg(ap, unsigned int), BASE_10, fd));
+	if (format == F_HEXA)
+		return (ft_printubase_fd(va_arg(ap, unsigned int), BASE_16, fd));
+	if (format == F_HEXA_UP)
+		return (ft_printubase_fd(va_arg(ap, unsigned int), BASE_16_UP, fd));
+	if (format == FORMATTER)
 		return (ft_printchar_fd(format, fd));
 	return (0);
 }
@@ -72,19 +72,22 @@ int	ft_vprintf(const char *format, va_list ap)
  */
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {
+	va_list	args;
 	int		len;
 
 	if (!format)
 		return (-1);
 	len = 0;
+	va_copy(args, ap);
 	while (*format)
 	{
 		if (*format == FORMATTER)
-			len += printer(*++format, &ap, fd);
+			len += printer(*++format, args, fd);
 		else
 			len += ft_printchar_fd(*format, fd);
 		format++;
 	}
+	va_end(args);
 	return (len);
 }
 

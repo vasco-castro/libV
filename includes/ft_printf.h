@@ -30,13 +30,16 @@
 # ifndef F_STRING_TAB
 #  define F_STRING_TAB 't'
 # endif
+# ifndef F_STRING_TAB_JOIN // TODO: Implement PRINT_TAB_JOIN
+#  define F_STRING_TAB_JOIN 'T'
+# endif
 # ifndef F_POINTER
 #  define F_POINTER 'p'
 # endif
 # ifndef F_BOOL
 #  define F_BOOL 'b'
 # endif
-# ifndef F_BOOL_UPPER
+# ifndef F_BOOL_UPPER // TODO: Implement UPPERCASE BOOLEAN
 #  define F_BOOL_UPPER 'B'
 # endif
 # ifndef F_DIGIT
@@ -69,7 +72,7 @@ int	ft_printbool(bool b);
 int	ft_printbool_fd(bool b, int fd);
 
 int	ft_printchar(int c);
-int	ft_printchar_fd(char c, int fd);
+int	ft_printchar_fd(int c, int fd);
 
 int	ft_printstr(char *str);
 int	ft_printstr_fd(char *str, int fd);
@@ -79,8 +82,8 @@ int	ft_println_fd(char *str, int fd);
 
 int	ft_printtab(char **tab);
 int	ft_printtab_fd(char **tab, int fd);
-int	ft_printtab_delim(char *tab[], char *delim);
-int	ft_printtab_delim_fd(char *tab[], char *delim, int fd);
+int	ft_printtab_join(char *tab[], char *sep);
+int	ft_printtab_join_fd(char *tab[], char *sep, int fd);
 
 int	ft_printbase(long n, const char *base);
 int	ft_printbase_fd(long n, const char *base, int fd);
@@ -94,10 +97,10 @@ int	ft_printptr_fd(void *ptr, int fd);
 int	ft_printfile(const char *filepath);
 int	ft_printfile_fd(const char *filepath, int fd);
 
-int	ft_printf(const char *str, ...);
-int	ft_dprintf(int fd, const char *str, ...);
+int	ft_printf(const char *format, ...);
+int	ft_dprintf(int fd, const char *format, ...);
 
-int	ft_vprintf(const char *str, va_list ap);
-int	ft_vdprintf(int fd, const char *str, va_list ap);
+int	ft_vprintf(const char *format, va_list ap);
+int	ft_vdprintf(int fd, const char *format, va_list ap);
 
 #endif /* FT_PRINTF_H */
