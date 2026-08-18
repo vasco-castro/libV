@@ -1,0 +1,11 @@
+# Build artifacts
+*.o
+*.a
+test
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
